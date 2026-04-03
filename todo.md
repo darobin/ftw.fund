@@ -1,6 +1,6 @@
 
 
-- [ ] polity configuration
+- [x] polity configuration
 - [x] single-page index
 - [ ] hero with blurb
 - [ ] executive summary
