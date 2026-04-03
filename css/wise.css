@@ -1,0 +1,79 @@
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("InterTight-VariableFont_wght.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("InterTight-Italic-VariableFont_wght.ttf");
+  font-style: italic;
+}
+
+:root {
+  --yellow: #fc0;
+  --tealish: #009d88;
+  --forest: #006c5c;
+  --blue: #455bc6;
+  --pink: #e97a9f;
+  --bordeaux: #920047;
+  --max-width: 960px;
+  --font: "Inter Tight";
+  --offset: 0.6rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  min-height: 100%;
+}
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+header h1 {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 900;
+}
+header > div {
+  padding: 4rem 0 1rem 0;
+  border-bottom: 1rem solid var(--yellow);
+}
+header > p {
+  /*margin: -0.4rem 0 1rem var(--offset);*/
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-weight: 300;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  letter-spacing: 3.5px;
+}
+main > p {
+  margin-left: var(--offset);
+  font-weight: 300;
+}
+footer {
+  padding: 0.8rem 0 2rem 0;
+  margin-top: 4rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-align: right;
+  border-top: 0.2rem solid var(--yellow);
+}
+footer > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
