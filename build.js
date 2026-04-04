@@ -32,18 +32,20 @@ exec.querySelector('h1').remove();
 const indexOut = indexData.replace(/<!--EXECUTIVE-->[\s\S]*<!--\/EXECUTIVE-->/, `<!--EXECUTIVE-->${exec.innerHTML}<!--/EXECUTIVE-->`);
 await writeFile(index, indexOut, 'utf8');
 
+[...doc.querySelectorAll('link, style, meta[name="document-id"], meta[name="revision-id"]')].forEach(el => el.remove());
 const link = doc.createElement('link');
 link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'report.css');
+link.setAttribute('href', 'css/report.css');
 doc.head.append(link);
+
+const df = doc.createDocumentFragment();
+const oldMain = doc.querySelector('main');
+df.append(...oldMain.childNodes);
+oldMain.replaceWith(df);
 
 const main = doc.createElement('main');
 main.append(...doc.body.childNodes);
 doc.body.append(main);
-
-const h1 = doc.createElement('h1');
-h1.append(...doc.querySelector('header > p.title').childNodes);
-doc.querySelector('header').prepend(h1);
 
 [...doc.querySelectorAll('img')].forEach(img => {
   img.setAttribute('src', img.getAttribute('src').replace(/^\.nemik\//, ''));
@@ -55,6 +57,12 @@ doc.querySelector('header').prepend(h1);
   upped.append(...h.childNodes);
   h.replaceWith(upped);
 });
+
+const h1 = doc.createElement('h1');
+const tit = doc.querySelector('header > p.title');
+h1.append(...tit.childNodes);
+doc.querySelector('header').prepend(h1);
+tit.remove();
 
 await writeFile(htmlTarget, report.serialize(), 'utf8');
 
