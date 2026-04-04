@@ -12,3 +12,4 @@
 - [x] report style
 - [ ] DIIF logo
 - [ ] contact blurb
+- [ ] mobile
