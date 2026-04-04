@@ -9,6 +9,6 @@
   - [x] copies the PDF over
   - [x] copies the HTML report over and adds style
 - [ ] choice screens
-- [ ] report style
+- [x] report style
 - [ ] DIIF logo
 - [ ] contact blurb

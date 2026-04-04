@@ -64,6 +64,12 @@ h1.append(...tit.childNodes);
 doc.querySelector('header').prepend(h1);
 tit.remove();
 
+const back = doc.createElement('a');
+back.setAttribute('href', '/');
+back.className = 'back';
+back.textContent = 'Back to site';
+main.prepend(back);
+
 await writeFile(htmlTarget, report.serialize(), 'utf8');
 
 function rel(pth) {

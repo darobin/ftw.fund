@@ -48,6 +48,7 @@ p.subtitle {
   font-variant: small-caps;
   font-size: 1.2rem;
   letter-spacing: 3.5px;
+  text-align: left;
 }
 div.meta {
   padding: 0.6rem 0 1rem 0;
@@ -69,6 +70,9 @@ div.imprimatur {
 div.imprimatur img {
   max-width: 2rem;
 }
+.back {
+  float: right;
+}
 
 #abstract {
   font-style: italic;
@@ -79,6 +83,7 @@ p, li, dt, dd {
   font-size: 1.25rem;
   text-align: justify;
   line-height: 1.375;
+  overflow-wrap: break-word;
 }
 a {
   color: var(--blue);
@@ -116,4 +121,17 @@ table {
 }
 dt {
   font-weight: 600;
+}
+
+@media only screen and (max-width:500px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  body, p, li, dt, dd {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  main {
+    padding: 0.5cm;
+  }
 }
