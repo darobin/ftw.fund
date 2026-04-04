@@ -37,6 +37,10 @@ const link = doc.createElement('link');
 link.setAttribute('rel', 'stylesheet');
 link.setAttribute('href', 'css/report.css');
 doc.head.append(link);
+const icon = doc.createElement('link');
+icon.setAttribute('rel', 'icon');
+icon.setAttribute('href', 'icon.svg');
+doc.head.append(icon);
 
 const df = doc.createDocumentFragment();
 const oldMain = doc.querySelector('main');

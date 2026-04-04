@@ -1,5 +1,5 @@
 
 - [ ] hero with blurb
 - [ ] choice screens
-- [ ] contact blurb
+- [x] contact blurb
 - [x] mobile
