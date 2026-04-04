@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!DOCTYPE html><html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Funding The Web (FTW)</title>
@@ -13,19 +10,19 @@
             background-image: url(ernst-haeckel.png);
         }
     </style>
-</head>
+<link rel="stylesheet" href="report.css"></head>
 
-<body>
-    <header>
-        <p class="title">Funding The Web
-        </p>
+<body><main>
+    <header><h2>Funding The Web
+        </h2>
+        <p class="title"></p>
         <p class="subtitle">From Cartel to Covenant
         </p>
         <div class="meta">
             <div class="author">Robin Berjon</div>
             <div class="date">2026-04-03</div>
         </div>
-        <div class="imprimatur" style="--color: #000; --zoom: 1"><img src=".nemik/img/asterism.png" alt="abstract shape">
+        <div class="imprimatur" style="--color: #000; --zoom: 1"><img src="img/asterism.png" alt="abstract shape">
             <div>supramundane <em>agency</em>.</div>
         </div>
     </header>
@@ -61,10 +58,10 @@
             </p>
             <p>This work was funded under a grant by the Digital Infrastructure Insights Fund (<a href="https://infrastructureinsights.fund/">https://infrastructureinsights.fund/</a>), for which I am very thankful.
             </p>
-            <p style="text-align: center"><img src=".nemik/img/e9fc6414a418b3637fcfa77f588df7665e6469709e1346c310765ac3639d4360" alt="" title=""></p>
+            <p style="text-align: center"><img src="img/e9fc6414a418b3637fcfa77f588df7665e6469709e1346c310765ac3639d4360" alt="" title=""></p>
         </section>
         <section>
-            <h1 id="h.7tic5htgko6h">Executive Summary</h1>
+            <h2>Executive Summary</h2>
             <p>Over five billion people use the web through browsers which they never pay for, despite browser engines being complex and costly systems. This is possible because browser vendors and search engine providers have developed a funding system — the <em>search levy</em> — in which search engines pay browsers for traffic under specific conditions. This arrangement has succeeded in keeping browsers free and cutting-edge, but over two decades of operation it has also created an artificial monopoly over search with cascading negative consequences.
             </p>
             <p>This report documents how the levy works and which problems it creates, but more importantly what we can do about it.
@@ -77,7 +74,7 @@
             </p>
         </section>
         <section>
-            <h1 id="h.cncbjg8gtmvz">Ding Dong! The Web Is Dead</h1>
+            <h2>Ding Dong! The Web Is Dead</h2>
             <p>The web has been pronounced dead many times over. It’s easy to take this as a sign of its resilience but we should be wary of unfounded optimism. The fact that the web is still kicking around in some form is less a testament to its inherent resilience, let alone its good governance, than a consequence of the time it takes for such a large system to stop moving. The wheel may still be spinning but the hamster is long dead <span class="references">(<a href="#bib-a19ea8c347a9154a003986e47577160e61ee72748a9590d4c711fd6f4cf1d1c0" role="doc-biblioref">Dash 2026</a>)</span>.</p>
             <p>The web’s death is commonly attributed to “Artificial Intelligence,” by which people mean LLM disintermediation of search and displacement of older advertising delivery mechanisms. The Financial Times thinks the web may be fatally wounded <span class="references">(<a href="#bib-8fbec0cccf5550082df12144118ec572ed7fcef5980b49100e7bcc5562fa6158" role="doc-biblioref">Hodgson et al. 2025</a>)</span>, the Economist asks "<em>can anything save it?</em>" <span class="references">(<a href="#bib-168fab63ad2ddf1544bcde36e9818dc0edaea29c319c90333c07b2266a871c19" role="doc-biblioref">The Economist 2025</a>)</span>, the BBC described the web “<em>destroyed</em>” <span class="references">(<a href="#bib-77f12ba734f28732220751c606fa09a57b45816a88e0dc5260dc97043aabc2e7" role="doc-biblioref">Germain 2025</a>)</span>, the Observer has the web's economy “killed” <span class="references">(<a href="#bib-bf95763c2a6ac34e0605b509dcf945d866d311e8e641f2f2feff5e06ece0b24b" role="doc-biblioref">Tremayne-Pengelly 2025</a>)</span>, while the Guardian asks "<em>so why is nobody trying to stop it?</em>" <span class="references">(<a href="#bib-0b43892b131662efe0ddac8abad39b5a1c46f30d02cbac06674928726d5ca740" role="doc-biblioref">Mahdawi 2025</a>)</span>. But it is this report’s position that the problem started much earlier and that while LLMs do make it worse they are the continuation of a deeper problem that predates the launch of today’s LLM products and platforms.</p>
             <p>This deeper issue, thankfully, is fixable. And because the web is, for now, still slowly settling into its purported “death”, <em>we may yet revive it</em>.
@@ -94,7 +91,7 @@
             </p>
         </section>
         <section>
-            <h1 id="h.563lvoumco2d">The Current System</h1>
+            <h2>The Current System</h2>
             <p>As of 2022, 63% of the world population, or roughly 5 billion people, used the Internet <span class="references">(<a href="#bib-205618eb1b9088bd5d592c08d9fda8dfe99b900b140ad7dd517aafcf300ff68b" role="doc-biblioref">ITU 2022</a>)</span>. While some of these may not regularly use a <em>browser</em> per se (the application used to navigate the web), they all use a <em>browser engine</em> (the software component that both browsers and other apps use to render web content) almost every time they use a device as those are widely used in applications in addition to forming the core of browsers. Essentially all mobile and desktop applications that connect to servers are variously thin or sophisticated wrappers around a browser engine, unbeknownst to end-users who simply see them as so many “applications” in their own right.
             </p>
             <p>Browsers and browser engines are provided to people free of charge, as public goods. Their continued provision and security vigilance is critical since without them the web collapses, as the attack surface for most apps without this upstream economy of scale would be enough to bankrupt whole swaths of software development. The browser engines are also staggeringly complex: for instance, in 2022 Chromium (the browser engine powering Google Chrome and other browsers) ran to about 35 million lines of code which puts it in roughly the same engineering weight class as entire <strong>operating systems</strong>. The exact cost of maintaining the three primary browser engines or of operating a major browser is subject to debate (covered in a later chapter) but even the higher estimates, while significant, amount to only a small fraction of the direct value (monetary or otherwise) produced by the web.
@@ -106,7 +103,7 @@
             <p>Note that search is a logical control point at which to establish such a levy <span class="references">(<a href="#bib-c55ba72ec0ebeae7d49e965805db5b2a743ca903e24c60cef76d2956119fdfe5" role="doc-biblioref">Clark 2012</a>)</span>. Almost all of the value of a search engine comes from the web it indexes (the content and services that make it worth searching through in the first place), which means that search engines have an incentive in keeping the web healthy <em>at least so long as they aren’t in a position to enclose it all</em>. A critical way to keep the web healthy is to invest in browsers and more generally in web infrastructure as that empowers the many people building web things to create greater marvels yet. This has the potential to create a positive cycle through which key web infrastructure is funded, leading to a better web, driving more revenue to search engines, and in turn levying more funds with which to support the health of the web.
             </p>
             <section>
-                <h2 id="h.5vssvhrrhc0i">The Mutualistic Web</h2>
+                <h3>The Mutualistic Web</h3>
                 <p>The relationship between publishers and search engines originally constituted a simple and rather fortuitous mutualistic affair across the period of generalised and steady growth. The arrangement was elegant in its reciprocity: publishers made their content freely available for search engines to index, which benefited the search engine by making its results relevant and comprehensive. In return, the search engine used that content <em>only</em> to index it and make it discoverable (with no <em>substitutive purpose</em>, crucially), driving traffic back to the publisher. No formal contract or standardised protocol governed this exchange — it was an alignment of incentives which emerged organically from the web's architecture and was sustained by a simple feedback mechanism. If a publisher withheld content, it lost traffic and if a search engine became extractive, publishers could exclude it via robots.txt and the engine would suffer from less relevant results.
                 </p>
                 <p>The critical precondition for this situation was competition: so long as multiple search engines vied for users, no single engine could afford to take more from publishers than it gave back, because publishers had alternatives and the costs of defection were manageable on both sides.
@@ -119,7 +116,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.et68ez9pr0ga">The Search Levy</h2>
+                <h3>The Search Levy</h3>
                 <p>The <strong>Search Levy</strong> (henceforth just “levy”) is a system in which a portion of search engine revenue is levied and used to pay browsers. (It is also used for operating systems and other agents, but our focus in this document is browsers.) The levy can take multiple general forms:
                 </p>
                 <ul>
@@ -138,7 +135,7 @@
                     </em></p>
             </section>
             <section>
-                <h2 id="h.vsssmjjet88f">Out of Scope</h2>
+                <h3>Out of Scope</h3>
                 <p>In this report, I am treating the following items as mostly (but not completely) out of scope:
                 </p>
                 <ul>
@@ -150,7 +147,7 @@
             </section>
         </section>
         <section>
-            <h1 id="h.40w2dhwwdau6">Incumbent Problems</h1>
+            <h2>Incumbent Problems</h2>
             <p>The levy was an important invention and remains a good starting point twenty years on. Taking a system view of the web, search is a key, logical place at which to apply a levy. Search extracts value from content and behaviour on the web (search engines would have no value otherwise) and renders it available at a functional choke point since search is one of the required components of web discovery <span class="references">(<a href="#bib-c55ba72ec0ebeae7d49e965805db5b2a743ca903e24c60cef76d2956119fdfe5" role="doc-biblioref">Clark 2012</a>)</span>. In turn, web content is only valuable in the first place because browsers provide critical infrastructure services that render that content available, make browsing it more attractive to people, derisking that browsing, and to a large degree molding that browsing via recommendation and reputation systems.
             </p>
             <p>Initially, the levy produced a virtuous, regenerative cycle: the search levy financed core web infrastructure and that core web infrastructure made the web continuously successful such that search engines enjoyed strong businesses that could then be levied from.
@@ -160,14 +157,14 @@
             <p>This chapter captures a relatively comprehensive view of the levy’s issues so as to provide a solid shared background from which to produce requirements and interventions.
             </p>
             <section>
-                <h2 id="h.k1zux5suu455">Artificial Search Monopoly</h2>
+                <h3>Artificial Search Monopoly</h3>
                 <p>The manner in which the levy system is structured means that it <em>mechanically</em> increases concentration in the search market. Few people change their default search engine even once — particularly on mobile devices — which means that purchasing a default placement effectively purchases market share. In turn, the search engine with the highest market share has greater profits (including supracompetitive ones from its ability to over-charge as a monopolist) from which to pay a higher price for further default placements. This eventually leads to almost every browser defaulting to the same search engine, and that search engine dominating the web by insuperable margins.
                 </p>
                 <p>Interestingly, this market dynamic is such that the search engine that happened to be ahead when the default payment model became standard practice can then by happenstance become perpetually dominant. Short of a major upset to the whole web, there is no point at which this cycle corrects itself: <strong>whoever makes the most money is whoever can pay the most for defaults, and whoever can pay the most for defaults stands to make the most money</strong>. Breaking it requires external intervention. By any rubric of anti-trust, this is an automatic and self-reinforcing monopoly at the infrastructure layer.
                 </p>
                 <p>This model is, of course, not theoretical: in <em>United States v. Google</em> the court's central finding was that Google "is a monopolist, and it has acted as one to maintain its monopoly." In 2021, Google's payments to secure preloaded defaults totalled more than $26 billion — nearly four times more than all of its other search-specific costs combined. The scale of these payments is itself diagnostic: Google would not pay this much unless it expected to receive something of comparable value in return, which helps put a price on search engine defaults. This value was captured crisply in internal Google slides obtained as part of the discovery process in that case.
                 </p>
-                <p><img src=".nemik/img/234f6c14fd1140e46c0522362a9eafe319d67432b760619def6b3f6efcba11f4" alt="" title=""></p>
+                <p><img src="img/234f6c14fd1140e46c0522362a9eafe319d67432b760619def6b3f6efcba11f4" alt="" title=""></p>
                 <p>The case’s focus on Google, however, tends to understate the degree to which browser vendors are not merely passive recipients of Google's payments but active participants in a structural arrangement that serves their own interests. The collusion here does not need to be conspiratorial as there is no back-room negotiation needed; the incentive structure makes this kind of coöperation self-executing and frictionless. Browser vendors have a direct financial stake in the perpetuation of search concentration: Google's monopoly pricing power (in advertising), which generates the supracompetitive profits from which the levy is paid, translates directly into revenue streams for affiliated browsers. <strong>While this has yet to be legally determined to constitute cartel behaviour, it is factually the case that Google Search and the browsers it pays (Apple Safari, Mozilla Firefox, Samsung Internet, and others) work in a way that all know maintains prices high and restricts competition</strong>.
                 </p>
                 <p>This collusive logic extends beyond payment arrangements into the technical and governance architecture of the browser ecosystem. The "voluntary standards" approach that browser vendors resolutely defend in bodies like the W3C entrench a system in which they are the final arbiters of all meaningful decisions affecting the functioning of the web, presenting as <em>technical consensus </em>what are in substance the <em>commercial preferences of a small group of megacorporations and their incentive-aligned vassals</em>. The problems created by the levy system are well-known to the web community at large, but when proposals have been raised for the W3C to exercise collective governance over search defaults — creating a standards-based mechanism that could help address the worst of the levy’s issues — major browser vendors have resisted, one representative stating in no uncertain terms, as recently as September 2024: “<em>W3C's value isn't in its ability to put limits on browsers.</em>”
@@ -176,7 +173,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.8qz5wrb9f7qo">Enshittifying Search</h2>
+                <h3>Enshittifying Search</h3>
                 <p>Cory Doctorow's concept of <em>enshittification</em> describes a predictable sequence in the decay of platform value: platforms first allocate surplus to users to build dependency, then withdraw it in favour of business customers, and finally extract value for shareholders, leaving everyone else progressively worse off but typically unable to leave due to the two-sided nature of the market in question <span class="references">(<a href="#bib-025190cb68d0ad821d08fc59690af85ace5152a6d0ded48c2c4fcfb65ad8da6e" role="doc-biblioref">Doctorow 2025</a>)</span>. Search has slightly different dynamics in that users don’t care about the presence of advertisers and publishers can be indexed by many search engines (multihoming) at very low extra cost. Nevertheless, Google has managed to lock most web users in by purchasing defaults anyway, which then locks advertisers and publishers in because they need access to the users.
                 </p>
                 <p>This power relationship has long enshittified the web for publishers. Under competitive conditions, publishers who allow their content to be indexed by a search engine face a meaningful check on the search engine's extractive behaviour: if one search engine becomes too parasitic, publishers can de-index from it, and users who find results deteriorating can defect to alternatives. But when a single search engine commands 90+% of search traffic, de-indexing is commercial suicide for publishers. There is no credible threat of exit, publishers have to do as they’re told as we’ve seen with AMP or CWV <span class="references">(<a href="#bib-40420e811f38d241a22aaad85a45826bef07137278873663cf7f5fded12b4167" role="doc-biblioref">Google 2015</a>)</span>.
@@ -190,27 +187,27 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.g9m3ylf6q6n3">Defunding The Web</h2>
+                <h3>Defunding The Web</h3>
                 <p>Google Search advertising alone represents approximately $224.5 billion of the roughly $600 billion global digital advertising market — about 37% of all digital ad spending. As explained above, the levy system is critical to driving Google’s market share up, but that is not its only effect. In <em>United States v. Google LLC</em>, Judge Amit Mehta went into extensive, damning detail to show that Google’s monopoly position, enforced by exclusive distribution agreements with browsers and mobile OSs, enabled it to charge supracompetitive prices for search text ads, with no only apparent constraints <span class="references">(<a href="#bib-3bb5d6077ee048d90735411402bd5ba4f7dd6e2bfd7c278a6804564ce303c2f5" role="doc-biblioref">United States v Google 2024</a>)</span>. He explains at length how Google was able to maintain revenue growth for search at or above a 20% target —&nbsp;representing about 2/3rd of the company’s overall growth — for over ten years, largely by playing on ad pricing. Putting it quite simply: “<em>Unconstrained price increases have fueled Google’s dramatic revenue growth and allowed it to maintain high and remarkably stable operating profits.</em>” As far as is known the problem continues and the European Commission has recently opened an investigation into precisely this practice <span class="references">(<a href="#bib-d7705551c297efc1329623893b8b844865d1a544306ae82203c5672f6bc85459" role="doc-biblioref">Stolton 2026</a>)</span>.
                 </p>
                 <p>The web’s overall revenue, however, is not infinitely extensible. Marketing budgets are set and marketing teams tend to treat search as just one of the ways to reach people on the web. The ad revenue that flows to Google Search ads doesn’t go elsewhere. This means that, as illustrated below, not only does Google Search get a share of all web advertising revenue (which would be fair), not only does it get a share that should flow to competing search engines (which would be problematic), but it <em>also</em> gets a share that should go to non-search web properties (e.g. publishers), which results in large-scale defunding of the rest of the web.
                 </p>
-                <p><img src=".nemik/img/225f3a7fb075aead409067cfb98ebfd150862c258ec9509dafcbd5196b2efd29" alt="" title=""></p>
+                <p><img src="img/225f3a7fb075aead409067cfb98ebfd150862c258ec9509dafcbd5196b2efd29" alt="" title=""></p>
                 <p>Browsers directly benefit from defunding the web, since they get a cut of the additional revenue. Critically, much of the value captured through the search/browser levy never returns to web infrastructure. Of the billions extracted through this process, only crumbs fund web-related infrastructure.
                 </p>
                 <p>Additionally, the gravity of Google’s search revenue undermines potential changes to the advertising system as a whole because its sheer gravity limits what options can be adopted elsewhere without bolstering it even further <span class="references">(<a href="#bib-8946ce3b9f21bfb3402f9e5f11d35273169bb39c41affe36aa027e4466f4faab" role="doc-biblioref">Berjon 2025b</a>)</span>. This further compounds the problem by making it harder to fix the web’s many problems with ad-based revenue models.</p>
             </section>
             <section>
-                <h2 id="h.rsr99da905q1">Unique Source of Funding</h2>
+                <h3>Unique Source of Funding</h3>
                 <p>The current structure of the search and browser ecosystem can give us a sense of how concentrated the browser’s funding model is. On the search side, we have Google with a 91% share of global query volume and Microsoft Bing at 3%, everyone else at 1% or less. On the browser side, we have Microsoft Edge at 5%, and it’s financed by Bing. Every single other browser with market share higher than 1% (accounting for a total of 92% comprising Chrome, Safari, Firefox, Samsung Internet, and Opera) is financed by Google Search.
                 </p>
-                <p><img src=".nemik/img/cdbc4f59f6b99d06b458a3fb3aaf457afd842efd2cd6c0d937c72d1d41a9530d" alt="" title=""></p>
+                <p><img src="img/cdbc4f59f6b99d06b458a3fb3aaf457afd842efd2cd6c0d937c72d1d41a9530d" alt="" title=""></p>
                 <p>Looking at browser engines, the picture is even more concentrated. Three major browser engines remain in the world — Google's Blink, Apple's WebKit, and Mozilla's Gecko — and all three are financed by Google Search. (There are promising developments around Servo and Ladybird, but as things stand today a consumer-grade browser can only be produced using those three). Since Microsoft Edge uses Blink, over 97% of the market runs on Google-financed engines (a number that’s even closer to 100% once we add in the sub-1% browsers).
                 </p>
                 <p>This shows both just how concentrated the market is, but also how dependent it is on a single source of funding. <em>A strategic shift from Google towards apps or LLMs, for instance by de-emphasising the web on Android and driving users to apps instead, could upset the entire web ecosystem overnight.</em></p>
             </section>
             <section>
-                <h2 id="h.678bryb9ovbr">Monoculture Over Pluralism</h2>
+                <h3>Monoculture Over Pluralism</h3>
                 <p>Every search engine embodies, <em>de facto</em>, an <strong>editorial policy</strong>. Like newspapers, television channels, or radio stations, a search engine frames what is and isn't relevant — what appears prominently, what is buried “beneath the fold,” how attention is directed and modulated, and what effectively ceases to exist. The implementation differs — the editorial policy is applied on demand and automatically, calibrated through algorithmic signals rather than editorial meetings — but the function is identical, and no less subjective, than that performed by any other form of media. As Cathy O’Neil puts it, an algorithm is just someone’s opinion written in code.
                 </p>
                 <p>When a newspaper editor decides which story leads the front page, we understand this as an editorial judgment shaped by institutional values, commercial incentives, and individual biases. When Google's ranking algorithm makes an equivalent determination, we have somehow convinced ourselves that this constitutes a neutral, technical process (the internet offered up this search result!) rather than a highly consequential editorial operation (Google’s algorithm and market incentive favoured this search result). Google’s editorial decisions have a greater impact than those of any newsroom but with none of the institutional guarantees, appeals or corrections process, or accountability.
@@ -227,7 +224,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.nx0j01yp33os">Opacity and Unaccountability</h2>
+                <h3>Opacity and Unaccountability</h3>
                 <p>There is very little <strong>transparency </strong>in today’s levy system. Almost everything the web community knows about it has been disclosed not through any governance process, but through material released from discovery processes in public court cases, leaks, forensic analyses, and whistleblowers. Most participants in the web economy, including seasoned developers and large, established digital properties, have no idea how the system operates. As a result, when the system produces distortions (and as shown in the rest of this chapter, it produces many) there is currently no mechanism through which the affected web community can identify the problem, trace its origins, or propose a remedy. If we are to take the W3C's stated goal of building a web for all humankind as anything other than a suburban lawn sign slogan <span class="references">(<a href="#bib-1ff40eec73416308c9322531ce87e9eb6134272fb700be93238edb591a1468d0" role="doc-biblioref">Wilson and Çelik 2025</a>)</span>, we need to ensure that the web community is able to evaluate how the beating heart of web infrastructure funding actually operates qua (intransparent but still measurable and analysable) market phenomenon.
                 </p>
                 <p>The absence of transparency is compounded by a complete absence of <strong>accountability</strong>, and this has direct consequences for users. The bilateral deals struck within the levy system can impose requirements on browser vendors that run contrary to users' interests without any form of oversight or accountability towards those users (mediated by disclosures to third parties or otherwise). A search engine may, for instance, require that the browser <strong>abstain from implementing</strong> certain privacy protections, or forbid the browser from modifying the SERP even when such modifications would benefit the user. For instance, a search engine may benefit commercially from making advertisements visually indistinguishable from organic results or from pushing users towards being logged in, which sacrifices privacy in support of its advertising business. A browser acting in its users' interest would be expected to counteract such practices, as indicated in the W3C's Ethical Web Principles when they establish the priority of constituencies, mandating that potential benefits for users take precedence over benefits to other ecosystem participants <span class="references">(<a href="#bib-282aea1761cf2d03ec38c8a02bb236bf8216e0bbab94104b713d3a5a8cd841a7" role="doc-biblioref">Appelquist et al. 2024</a>)</span>.
@@ -238,7 +235,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.xqw92dgpsq3x">No Browser Governance</h2>
+                <h3>No Browser Governance</h3>
                 <p>Browsers are expected definitionally to be “<em>user agents”</em>, software that acts on behalf of the person and in their interest in a trustless, open environment <span class="references">(<a href="#bib-e8c16612eb9b980d5db1dcc16c1b39d1e8c20c9c0313588997bb793cd9142f64" role="doc-biblioref">Berjon and Yasskin 2025</a>; <a href="#bib-d2599206e4d2169f47f6d6652e0e2b2d1b76ba0d360cff7a6d4674bc2c85a9c2" role="doc-biblioref">Nottingham 2020</a>; <a href="#bib-282aea1761cf2d03ec38c8a02bb236bf8216e0bbab94104b713d3a5a8cd841a7" role="doc-biblioref">Appelquist et al. 2024</a>)</span>. (Websites and endpoints at stable domains are assumed, conversely to represent the interests of one or more legal persons and enforce business logic fairly across all classes of user agent.) These are not supposed to be aspirational platitudes but rather to articulate a key architectural assumption on which the entire web platform is built. The browser is the user's fiduciary in the digital sphere, the intermediary entrusted with representing their interests in every interaction with every server <span class="references">(<a href="#bib-f71e8cdf4116b384bbcbb7fbd19b50b772263725d9f9ecce1cdbdaaed5b7642e" role="doc-biblioref">Berjon 2021b</a>)</span>.
                 </p>
                 <p>In the absence of <strong>enforcement</strong> of this expectation, however, this architectural expectation finds itself violated, which in turn puts the web off kilter. Google Chrome, for instance, remains the only major browser without meaningful privacy protections. Worse, it deploys a comprehensive set of highly deceptive design patterns to trick its users into disclosing their near-entire online behaviour to Google. Architecturally, it doesn’t deserve to be classed as a user agent but rather as Google’s optimised access mechanism for reaching and observing users. There exists, however, no mechanism within the web standards community, within the levy system, or within any known governance structure through which the web community could identify this betrayal, hold the browser accountable, and compel a change in behaviour.
@@ -247,7 +244,7 @@
                     </strong></p>
             </section>
             <section>
-                <h2 id="h.ck9mojtcp16">Browser Engine Financing</h2>
+                <h3>Browser Engine Financing</h3>
                 <p>The levy finances browsers, but it does not finance browser <em>engines</em>. To recall, a browser is the application that users interact with whereas the browser engine is the vastly more complex substrate beneath it (or embeddable and white-labellable in other applications). Key components include the “rendering pipeline”, the increasingly load-bearing and complex-to-secure JavaScript runtime required for web app interactivity, the rapidly-iterating and multi-protocol networking stack, the security sandbox, the implementation of hundreds of standards that collectively determine what the web platform can do <span class="references">(<a href="#bib-b828d5da3dc6c824ddf8c0b5644319daf7fa752b095fe3dc0ad4d344e038f7fd" role="doc-biblioref">Ayala 2025</a>)</span>. Building and maintaining a browser engine is <em>far</em> more expensive and technically demanding than building a new browser shell atop an existing engine would be. Indeed, most “alternative browsers” do the latter with a miniscule fraction the budget it would take to attempt (much less guarantee) the former.
                 </p>
                 <p>Yet the levy's financial flows are structured around the browser as a distribution endpoint for search queries, not around the engine as a piece of shared infrastructure. A browser vendor can adopt an existing engine (often Google's Blink/Chromium), collect revenue-sharing payments from a search engine for default placement, and contribute nothing whatsoever back to the engine's development. This is textbook “free riding”: the system rewards building thin browser shells that capture levy revenue while externalizing the cost of engine maintenance onto whichever entity underwrites the engine's development. Yet, we do need engine diversity lest all decisions pertaining to web technology be made by a single team (which, indeed, is increasingly the case today).
@@ -256,7 +253,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.3khavy98nm7r">Can Search <em>Not</em> Kill The Web?</h2>
+                <h3>Can Search <em>Not</em> Kill The Web?</h3>
                 <p>Looking back over the past decades, it’s tempting to ask: is it even possible for search <em>not</em> to kill the web?
                 </p>
                 <p>Today’s shift in which AI overviews are substituting for publisher visits (and thereby destroying the revenue model of ad-driven sites) is a markèd worsening of a trend that has been unfolding since Google became dominant enough to impose its will on websites about fifteen years ago. Returning results in “boxed” (extended previews displayed in a box) or other inline form, to say nothing of AMP <span class="references">(<a href="#bib-40420e811f38d241a22aaad85a45826bef07137278873663cf7f5fded12b4167" role="doc-biblioref">Google 2015</a>)</span>, already do what AI overviews are just now perfecting, which is eliminating the need to send people to the actual source that worked on producing the content extractable as a byproduct of indexing. The problem was never the indexing — indexing the web serves the mutualistic purpose of making it discoverable, so long as it drives traffic back to the source. The problem is <em>substitutive use</em>: in effect, Google treats the need to send traffic to others as a bug which it has invested massively into fixing.
@@ -272,20 +269,20 @@
             </section>
         </section>
         <section>
-            <h1 id="h.k2om6yleyr2w">How Much Can A Browser Cost?</h1>
+            <h2>How Much Can A Browser Cost?</h2>
             <p>A reasonable bystander might expect that the cost of maintaining the web's most critical infrastructure would be a well-established figure, the kind of number that appears in budget documents, gets debated in governance forums, and informs policy decisions about the digital sphere's future. That reasonable bystander might, perhaps even without excessive <em>naïveté</em>, expect that the people who earnestly declare that the web is “<em>for all humanity</em>” and “<em>designed for the good of all people</em>” wouldn’t dare make such grandstanding statements without at least a modicum of public accountability.
             </p>
             <p>The reasonable bystander would, however, be wrong. As it turns out, the web community does not know, to within multiple orders of magnitude, how much a browser or browser engine costs to develop and maintain. This is a symptom of the private government of the as-yet cyberlibertarian web. A public resource, designed for and maintained to ensure the good of all, could simply never exist under the opacity documented throughout this report. Based on how its most fundamental structures are governed, the web isn’t a commons but rather <em>private property</em>that the public is granted access to because it’s profitable (for now) to grant it to them, less a commons than an <strong>easement</strong>.
             </p>
             <section>
-                <h2 id="h.fqd0nkhl7hpp">Workshop on Browser Funding</h2>
+                <h3>Workshop on Browser Funding</h3>
                 <p>In the process of developing this report, I organised a workshop on "Browser Funding After Search Deals" in June 2025 at the Web Engines Hackfest, which is the primary gathering of the browser engine community. The workshop convened engineers and leaders from across the browser ecosystem to examine what would happen to browser funding if the current search default payment system were disrupted, whether by antitrust remedies, regulatory intervention, structural reform, or other <em>forces majeure</em>.
                 </p>
                 <p>The key finding was the one noted above: the community itself — including engineers working for browser vendors — lacks a clear understanding of browser costs. Participants disagreed not merely on precise figures but even on the correct order of magnitude, reflecting fundamentally different assumptions about what counts as a <em>necessary </em>cost, what level of engineering investment constitutes "<em>sufficient</em>" browser development, and how to account for <em>shared infrastructure </em>such as the Web Platform Tests (WPT) environments, browser sync servers, the Safe Browsing database, and security monitoring. The discussion made clear that greater accountability is needed. Having infrastructure serving over five billion people managed under financial obscurity has a further chilling effect on novel browser engines that struggle to know how to account for necessary costs and presents a challenge for discussion about potential public funding: asking a government for €10 million and asking it for €4 <strong>b</strong>illion are not the same task.
                 </p>
             </section>
             <section>
-                <h2 id="h.bryyy4jqzg0y">The Ehrenberg-Russell Estimate</h2>
+                <h3>The Ehrenberg-Russell Estimate</h3>
                 <p>Daniel Ehrenberg, a highly experienced browser developer, offers a back-of-the-envelope estimate for Chrome's cost based on engineering headcount: somewhat fewer than 2,000 engineers at an average fully-loaded cost of $500,000 per year yields approximately $1 billion annually (<a href="https://bsky.app/profile/littledan.dev/post/3lbdqmgjt362m">https://bsky.app/profile/littledan.dev/post/3lbdqmgjt362m</a>). Alex Russell, a former Chrome engineer, suggests that this figure significantly underestimates the true cost by omitting marketing, distribution, and infrastructure expenses, suggesting that the actual operating cost is likely three to four times higher, putting Chrome's total cost in the range of $3–4 billion per year (<a href="https://bsky.app/profile/infrequently.org/post/3lbfngxw3pcfm">https://bsky.app/profile/infrequently.org/post/3lbfngxw3pcfm</a>).
                 </p>
                 <p>They note, however, that revenue as can be inferred from Google's payments to other browser vendors for default placement would be very large relative to even these elevated cost estimates: Google pays Apple approximately $20 billion annually to be the default, and Safari holds roughly 19% of the global browser market. That implies roughly $1 billion in search default revenue per percentage point of market share, or on the order of $100 billion that could theoretically flow annually to web infrastructure across the entire browser ecosystem.
@@ -294,26 +291,26 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.s95jdg74l4e1">The Kardell Estimate</h2>
+                <h3>The Kardell Estimate</h3>
                 <p>Brian Kardell, a long-time web standards expert and developer advocate at Igalia, has produced a widely-cited estimate of browser engine costs. His analysis concludes that maintaining all three major independent browser engines (Blink, WebKit, and Gecko) requires approximately $2 billion per year in aggregate <span class="references">(<a href="#bib-38a283e98682062294526e879741ed947b4402ea25c89c200b999b653e33e420" role="doc-biblioref">Kardell 2022</a>)</span>.
                 </p>
                 <p>This figure attempts to capture the full cost of engine development, including the standards work, testing infrastructure, and platform integration that engines require but that is often invisible in other estimates.
                 </p>
             </section>
             <section>
-                <h2 id="h.rgnr0t14kozm">The Cooper Estimate</h2>
+                <h3>The Cooper Estimate</h3>
                 <p>Alissa Cooper, a leading expert in both internet standards and tech policy, has produced a detailed analysis of browser economics, encompassing both the revenue and cost sides of the equation <span class="references">(<a href="#bib-355d13fe0f4ad907ed6e733979379569dce30b606be813c01927355124c10e08" role="doc-biblioref">Cooper 2025a</a>)</span>. On the revenue side, she finds that Chrome generates an astonishing estimated $17–35 billion per year in advertising revenue for Google in the United States alone. On the cost side, she estimates that Google spends at least $1–2 billion per year on Chrome development, while Mozilla spends slightly less than $400 million per year on both the Gecko engine and the Firefox browser.
                 </p>
                 <p>Cooper's analysis argues that since Firefox is a competitive browser that provides a fully functional browsing experience, its funding level can be considered sufficient. If $400 million per year is enough to maintain an independent browser engine and a competitive browser, then the multi-billion-dollar figures associated with Chrome reflect not the intrinsic cost of browser development but the overhead of operating within the inefficiency of a monopoly's corporate structure. Cooper counterintuitively concludes that the web could do perfectly well even if Google were forced to divest Chrome, although critics point to the importance of shared infrastructure like standards, testing, etc. being significantly undercounted in these estimates and currently borne heavily by Google <span class="references">(<a href="#bib-ae1df74ac29fe4831f4dd7d7dba6b2d414d843214e7ec3a11b8007f3d4b2324e" role="doc-biblioref">Cooper 2025b</a>)</span>.
                 </p>
             </section>
             <section>
-                <h2 id="h.of0hdibooxpo">The Tarakiyee Estimate</h2>
+                <h3>The Tarakiyee Estimate</h3>
                 <p>Tara Tarakiyee, who works on open source funding issues at the Sovereign Tech Agency in Germany, approaches the question from an entirely different angle, looking at the empirical productivity of a small, focused engineering team <span class="references">(<a href="#bib-329e7ac8d07bc703f7fe80fd39256e8c08dfd3647be483acad6e97eb34621dce" role="doc-biblioref">Tarakiyee 2025</a>)</span>. They examine how much improvement in Web Platform Tests (WPT) pass-rates the cooperative Igalia has been able to achieve in the Servo browser engine with just five engineers. Zooming out from that observed productivity to the full scope of engine development work, their analysis arrives at a ballpark figure of €50–70 million per year to develop a competitive browser engine.
                 </p>
             </section>
             <section>
-                <h2 id="h.i8kjxkucfffn">The Ayala Estimate</h2>
+                <h3>The Ayala Estimate</h3>
                 <p>Dietrich Ayala, a veteran of browser issues and formerly of Mozilla, has developed a methodologically interesting approach to browser engine costing, grounded in a data-centric measure of feature development throughput <span class="references">(<a href="#bib-319c879a9875bf360f47701a58b556e22d3c2d491f2da7df60e7333fa5913738" role="doc-biblioref">Ayala 2026</a>)</span>. Rather than starting from headcount or budgets, Ayala begins with a concrete, measurable unit of output: Baseline Widely Available (BWA) features. A BWA is defined as a feature that is “well established and works across many devices and browser versions. It’s been available across browsers for at least 2½ years (30 months).”
                 </p>
                 <p>Ayala measures two things: how many new BWA features are added to the web platform each year (approximately 52), and how many of those features the Servo engine manages to implement at its current funding level (22). From this, he calculates that implementing 52 BWA features per year in Servo — which is to say keeping pace with the web platform's evolution — would require approximately 44 full-time engineers. At a cost of €200,000 per headcount, this yields an annual cost of approximately €8.8 million.
@@ -322,11 +319,11 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.nm26pqmk5nmr">So, What’s The Tab?</h2>
+                <h3>So, What’s The Tab?</h3>
                 <p>The state of the art reveals that every cost estimate from single-digit millions to multiple billions has its defenders, and each pricing level has a methodology to support it, even if it’s back-of-the-envelope. Summarising the estimates:
                 </p>
                 <table>
-                    <tr>
+                    <tbody><tr>
                         <td><strong>Estimate</strong></td>
                         <td><strong>Scope</strong></td>
                         <td><strong>Annual Cost</strong></td>
@@ -379,7 +376,7 @@
                         <td>$3–4 billion
                         </td>
                     </tr>
-                </table>
+                </tbody></table>
                 <p>This variation can be explained through several identifiable factors. There are stark differences in compensation between a massive, RSU-heavy Silicon Valley monopoly and a nimble European cooperative like Igalia. Aspects of browser operation that sit outside core engine development (from the Safe Browsing database to sync servers, to marketing and distribution) add substantial costs that some estimates include and others exclude. And the degree of organisational overhead varies enormously between a five-person focused team and a multi-thousand-person division within a trillion-dollar corporation.
                 </p>
                 <p>The most important conclusion, however, is not about the precise number but about the governance implications. The funding level required does not necessarily determine which levy reform ought to be chosen. Given a WISE-like system that formalises the levy but governs it in the interest of the web's users, transparency into funding needs be imposed as a condition of participation. And even assuming substantially depreciated revenue due to the loss of monopoly pricing in search advertising following the reform of the system, the revenue potential remains comfortably in the billions. The bulk of this huge annual revenue would be more than enough to cover the full cost of multiple engines and browsers, with ample margin for investment in standards work, testing infrastructure, accessibility, and support for the broader web commons.
@@ -387,7 +384,7 @@
             </section>
         </section>
         <section>
-            <h1 id="h.mm4l1qcnm8qe">Solutions</h1>
+            <h2>Solutions</h2>
             <p>This section primarily looks at solutions regarding funding sources or in some cases solutions addressing specific incumbent problems. How the funds are then potentially deployed and governed (in cases where they don't go to browsers or browser engines directly) are tackled in subsequent chapters.
             </p>
             <p>The primary concerns driving these solutions are:
@@ -403,7 +400,7 @@
                 </li>
             </ul>
             <section>
-                <h2 id="h.9qdojfac6c2q">Voluntary Donations</h2>
+                <h3>Voluntary Donations</h3>
                 <p>The simplest conceptual alternative to the current levy is to fund browsers and browser engines through voluntary contributions. Under this model, search engines, which have strong commercial reasons to want the web to function well, would be among the primary contributors — but so too could other beneficiaries of web infrastructure: large publishers, e-commerce platforms, or governments. Some form of institution would be required to apportion the funds in a sufficiently fair and accountable manner, ensuring that contributions flow not only to the most visible browsers but also to the engine development work that underpins them and to the smaller independent browsers that maintain competitive pressure in the ecosystem.
                 </p>
                 <p>One mechanism that could strengthen this approach is a shift in engine licensing toward what might, if it came into existence, be termed <em>Commons Source</em>. The concept of Commons Source licensing draws on Elinor Ostrom's work on commons governance, which demonstrates that sustainable commons management requires the ability to define boundaries, monitor use, and sanction free-riders <span class="references">(<a href="#bib-90fb2269f405ae0ed941ef4090d0b60ce3cee3ff9d87277c6019b13c6a682683" role="doc-biblioref">E. Ostrom 2019</a>)</span>. By contrast, the open-source model, as currently practiced, is fully open-access: anyone can use, modify, and redistribute the code without (much) obligation. This is not, however, how commons typically function since a commons “<em>requires specific institutional conditions, including clearly defined boundaries around the resource and its users, proportional distribution of costs and benefits, collective choice arrangements that give participants a voice in rule-making, accessible conflict resolution mechanisms, and recognition by external authorities of the community’s right to self-govern</em>” <span class="references">(<a href="#bib-ace23be411d0ed9c754712e2ceff2f79c8908d0ffa3de37b2a1755cdbb3a07d8" role="doc-biblioref">Hof 2026</a>)</span>. A well-governed commons assumes the ability to gate access to appropriators and to enforce rules around the shared management of the resource. Commons Source licensing would require that applications or browsers wishing to use an engine contribute back in some prescribed way: perhaps X number of significant code contributions for every Y users, financial payments, participation in governance, or some squishier metric like exemption from payments as long as on is “in good standing with the Maintenance Board”. This would address the free-riding problem identified in the previous chapter, in which browser vendors adopt an engine, collect levy revenue, and invest nothing in engine maintenance.
@@ -416,7 +413,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.so9b9hjipup2">Fiduciary Obligations for User Agents</h2>
+                <h3>Fiduciary Obligations for User Agents</h3>
                 <p>A complementary approach that addresses the incentive misalignment at the heart of the levy rather than the funding mechanism directly is to impose legally enforceable fiduciary duties on <strong>user agents </strong>(including voice/chat browser and other unconventional browsers). The idea is that software acting on behalf of a person in their interactions with online services should be bound by duties of loyalty, care, and confidentiality analogous to those imposed on other fiduciaries such as lawyers, doctors, or financial advisors <span class="references">(<a href="#bib-f71e8cdf4116b384bbcbb7fbd19b50b772263725d9f9ecce1cdbdaaed5b7642e" role="doc-biblioref">Berjon 2021b</a>; <a href="#bib-e8c16612eb9b980d5db1dcc16c1b39d1e8c20c9c0313588997bb793cd9142f64" role="doc-biblioref">Berjon and Yasskin 2025</a>)</span>.
                 </p>
                 <p>The relevance to the levy is that if fiduciary duties were imposed by law, a browser would incur significant liability (even class-action liability) if it were to default to a search engine whose practices demonstrably conflict with users' interests (e.g. through deceptive ad presentation or invasive data collection). It simply would not be able to surveil all online activity in the way that Chrome currently does. A fiduciary browser could still receive revenue from search engines, but the terms of that relationship would be constrained by a legal obligation to put users first, rather than by the current arrangement in which the search engine's commercial leverage overrides the user's interests. This framework extends naturally to AI agents, which hold comparable positions of trust. This makes fiduciary duties a forward-looking intervention as well as a remedy for present dysfunction.
@@ -425,14 +422,14 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.668fqcq4mwvu">Retroactive Public Goods Funding</h2>
+                <h3>Retroactive Public Goods Funding</h3>
                 <p>For completeness, it is worth noting the model of Retroactive Public Goods Funding (RPGF), which has been explored primarily in the blockchain ecosystem by projects such as Optimism. The core idea is that public goods are funded <em>after</em> they have demonstrated value rather than before, on the theory that retroactive assessment makes it easier to identify and reward genuinely useful contributions, particularly structural dependencies. This inverts the traditional grant model, in which funders must predict which projects will succeed, and instead allocates resources based on observed impact.
                 </p>
                 <p>The primary innovation compared to voluntary donations is that retroactive assessment mechanism. However, this assumes that projects can bootstrap without funding and front all the costs of development and operation without any payment certainty, which is problematic at any given time and particularly poorly matched to the scale of browser engine development, which requires sustained multi-year investment of significant size. What’s more, there is, to date, scant evidence that RPGF produces meaningful long-term funding at infrastructure scale, or that the community-driven allocation mechanisms consistently direct resources toward the most critical infrastructure rather than toward the most visible or fashionable projects. Some form of RPGF or retrospective evaluation may well have a role (for instance, as a way of prioritizing feature development or in-kind contributions to a browser project in the public interest), but it is my position that it should not be mistaken for a credible <em>standalone </em>solution for browser engine funding.
                 </p>
             </section>
             <section>
-                <h2 id="h.qnixsxcjja8v">Global Levy for an Open Web (GLOW)</h2>
+                <h3>Global Levy for an Open Web (GLOW)</h3>
                 <p>Another approach would be to establish a formal, transnational levy dedicated to financing open web infrastructure, the Global Levy for an Open Web or GLOW. The concept draws on precedents in international development finance, where solidarity levies have been successfully deployed to fund global public goods. The most prominent example is the airline ticket solidarity levy, introduced by France in 2006 and used as a microlevy to support global health initiatives operated through UNITAID. The levy has raised over €4bn since its inception <span class="references">(<a href="#bib-edd7e75de39609f67a1a597c9fc8fe4482dc890095521eb55436de807a5edefa" role="doc-biblioref">Bertrand et al. 2023</a>)</span>. Similar mechanisms have been proposed or implemented for financial transactions, carbon emissions, and telecommunications.
                 </p>
                 <p>GLOW could be justified on the basis that the web generates enormous global economic value and that the infrastructure enabling this value creation is a global public good whose maintenance costs are trivially small relative to its benefits. The levy could be applied at any of several points: on search advertising revenue, on digital advertising transactions more broadly, or as a small surcharge on e-commerce facilitated by web infrastructure.
@@ -445,7 +442,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.cn1wwqd68w9g">The League of Digital Infrastructure</h2>
+                <h3>The League of Digital Infrastructure</h3>
                 <p>Mark Carney's 2026 Davos address centred on a key diagnostic assessment: <em>rupture</em>. We are traversing a phase in which the international world order is being rewritten, and its new rules need to be reinvented. This is particularly true for digital infrastructure which has found itself at the centre of this shift in how power is used. These systems operate as private government and have aligned themselves with American geopolitical interests.
                 </p>
                 <p>This rupture creates opportunity: what if a coalition of middle powers committed to building, co-owning, and governing shared digital infrastructure as a matter of collective sovereignty formed a <em>League of Digital Infrastructure</em> with which to build durable digital independence.
@@ -464,7 +461,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.qcfeapyafaz8">Web Infrastructure Search Endowment (WISE)</h2>
+                <h3>Web Infrastructure Search Endowment (WISE)</h3>
                 <p>The WISE proposal reforms the levy system while preserving its core economic logic that search revenue should fund web infrastructure, and addresses its structural failings by using control points to force commercial actors into conformance with collectively-governed goals. Rather than relying on voluntary contributions or new taxation, WISE would formalise the existing levy by delegating the management of browser and search choice screens to an institution governed by relevant stakeholders, including browser vendors, search engines, the web community, and representatives of the public interest.
                 </p>
                 <p>Two aspects of this system need to be considered. First, the <em>design</em> of choice screens matters enormously. Experience with failed choice screens has demonstrated that poorly designed screens can be trivially gamed by incumbents or rendered meaningless by deceptive anti-patterns. A choice screen designed through expert consensus, informed by behavioural research and iteratively refined, should perform significantly better than screens created by monopolies in a sluggish feedback loop with antitrust enforcers.
@@ -479,7 +476,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.m3z7p0babm9n">Search Protocol</h2>
+                <h3>Search Protocol</h3>
                 <p>Perhaps the most architecturally transformative proposal is to reconceive search not as a website but as a protocol, essentially a standardised interface through which browsers access search functionality and render results themselves, natively, instead of fetching and rendering the SERP as any other webpage on any other domain. This is not, in fact, a new idea: early internet search had its own protocol known as WAIS (Wide Area Information Servers), a system that predated the web itself.
                 </p>
                 <p>In a protocol-based search scenario, a search engine would expose its index and results through a standardised (high-volume) API rather than through a proprietary web interface. The browser would then be responsible for retrieving, rendering, and presenting results to the user, in the same way that browsers today retrieve and render HTML from web servers without the server controlling the display. This seemingly modest architectural change impacts multiple dimensions, particularly for chat-based and unconventional browsers.
@@ -498,7 +495,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.1wtpypy4a90l">Other Control Points</h2>
+                <h3>Other Control Points</h3>
                 <p>David Clark's work over the years on control point analysis <span class="references">(<a href="#bib-c55ba72ec0ebeae7d49e965805db5b2a743ca903e24c60cef76d2956119fdfe5" role="doc-biblioref">Clark 2012</a>)</span> provides a systematic methodology for cataloging and understanding the points of power created by specific design decisions in internet architecture. Rather than beginning from abstract principles, Clark's approach looks at concrete tasks (such as retrieving and viewing a web page) to identify which actors exercise control at each technological event or informational hop, what options for control they possess, and what vulnerabilities those control points create in aggregate.
                 </p>
                 <p>Importantly, it is not technology alone that assures the correct operation of the internet. Rather, the actors who sit at control points must be <em>disciplined</em> to be trustworthy, whether through market competition, legal obligation, or institutional design. Actors removed from the actual technology (e.g. governments, standards bodies) can only exercise <em>indirect</em> control, shaping outcomes by influencing the behaviour of those who hold direct power at the relevant control points.
@@ -509,7 +506,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.e88sbwsez7x0">Deliberate Activism</h2>
+                <h3>Deliberate Activism</h3>
                 <p>An alternative to the current levy cannot succeed as a purely technocratic system that confines itself to managing choice screens and distributing levy funds. The problems it addresses don’t exist in isolation as surprising malfunctions in an otherwise well-functioning system; they are aligned with the general state of the digital sphere. Confronting this reality requires engaging with a deeper question about how liberal democracies relate to infrastructure power. Liberal political theory has traditionally emphasized state <em>neutrality</em> across a range of societal dimensions — speech, religion, enterprise — intervening only to prevent specific harms. This posture of principled non-interference, supplemented by occasional corrective regulation, has served tolerably well in contexts where the state is meaningfully more powerful than the private actors it oversees. But when the private actors in question are transnational infrastructure providers whose platforms mediate the information flows, economic transactions, and social interactions of billions of people, the power differential between state and actor is radically reduced and at times inverted. Under these conditions, neutrality does not produce neutral outcomes: it simply supports a status quo in which the most powerful make the rules.
                 </p>
                 <p>Johannes Thumfart argues that, if they wish to maintain liberal democracy in increasingly illiberal times, democratic states must shift their political orientation from <em>neutrality</em> to <em>neutralisation</em>. Instead of a passive stance that assumes fair outcomes will emerge from non-intervention they must actively counterbalance concentrations of power that threaten democratic self-governance <span class="references">(<a href="#bib-a4eead4a94bd481c2981c10b41d4fd1b78976bb8e83a68d6dc858ee5826b0e27" role="doc-biblioref">Thumfart 2024</a>; <a href="#bib-e2d88abaf26c6949103b44d6b8c43218d92b844054e7a549a55449394ede0f93" role="doc-biblioref">Bagg 2024</a>)</span>. The distinction is that while neutrality is a principle about what the state refrains from doing, neutralisation is a practice concerned with what the state must actively do to maintain the conditions of democratic agency, namely dispersing power.
@@ -522,14 +519,14 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.4yy80hxvizk">Another Web Ahead</h2>
+                <h3>Another Web Ahead</h3>
                 <p>Finally, it must be acknowledged that if the levy system cannot be improved but proves too entrenched to reform, if browser engine diversity continues to decline, and if the parasitism of Google and browser vendors over the rest of the web continues to degrade content quality and to defund the web, then it may ultimately be necessary to consider whether the web's current architecture can sustain the kind of open, democratic information ecosystem that its founders envisioned at all — or if we might not just be better off declaring it dead for good and moving on.
                 </p>
                 <p>One emerging splinter web is the AT Protocol, which already supports long-form writing, embedded applications, and offers a growing ecosystem of social tools architected around users rather than servers and origins. In a sense, the AT Protocol represents what the web publishing might look like if rebuilt on a healthier set of guarantees and infrastructural assumptions: content is grounded in long-lived and user-managed, app-independent identities and on-protocol data is guaranteed authentic by dint of a user-managed public key infrastructure rather than being domain-bound or CDN-managed; data is self-managed over standardised commodity storage by individuals rather than in siloed and proprietary platform data languages; and the decomposition of platform functions into interoperable (and swappable) services forming layers with stable APIs creates natural surfaces for piecemeal and resilient democratic governance. But it is too early to focus exclusively on this avenue — <em>yet</em>. The web remains the world's most important platform, its standards are mature and widely implemented, and abandoning it in favour of a drastically different, not very backwards-compatible platform would impose transition costs and risks. The better course is to fight for the web's renewal while keeping one eye on the alternatives that may be needed if renewal fails.
                 </p>
             </section>
             <section>
-                <h2 id="h.3l4k8g8p51hm">Putting It All Together</h2>
+                <h3>Putting It All Together</h3>
                 <p>The solutions surveyed in this chapter are not mutually exclusive; in fact many are complementary. They can be woven together into a layered strategy in which each element reinforces the others, and their execution can be sequenced to avoid trying too many things at once. We are facing a major problem that also presents a generational opportunity, the goal here is to fit these solutions together into an ambitious but feasible strategy brief.
                 </p>
                 <p><strong>WISE as the foundation.</strong> The most actionable near-term reform is the establishment of WISE: a multistakeholder institution that formalises the levy system, governs choice screens for both browsers and search engines based on delegated powers (described in the enforcement section), and conditions eligibility for participation on adherence to rules that protect the web's users and ecosystem. WISE does not require global consensus to begin operating. It requires a single major jurisdiction willing to mandate that browser and search choice screens within its territory be managed by a democratic multistakeholder institution rather than by bilateral deals through which monopolists organise a market. Europe is the obvious candidate, although other jurisdictions could serve the same bootstrapping function. Once operational in one major market, WISE's governance framework creates gravitational pull: browser vendors and search engines seeking access to that market must comply with its rules, and the governance benefits become visible to other jurisdictions considering similar reforms. The institution can then grow not by imperial decree but by demonstrated superiority over the system it replaces.
@@ -543,13 +540,13 @@
             </section>
         </section>
         <section>
-            <h1 id="h.7he5ybzbjfhd">WISE Covenant Governance</h1>
+            <h2>WISE Covenant Governance</h2>
             <p>The promise of WISE is to bring the existing levy under democratic governance in order to reshape it so as to address its many shortcomings. But what governance is that? The idea of a democratic system often brings up images of a “UN of the internet” in which the peoples of Earth would all get a vote. But that is not what the situation calls for here. We can make it so that evidently public concerns — web infrastructure — are governed in service of the public without reducing representation to mechanical direct voting. A properly democratic system is governed by a multiplicity of stakeholders with different interests, which interact as a system of “checks and balances”, that in aggregate increase people’s agency in making good choices for themselves, and allowing jurisdictional oversight to be layered in differently for different constituencies.
             </p>
             <p>This chapter does not attempt to define a complete set of bylaws or a fully specified governance mechanism. That work must be done collaboratively, within the institution itself during its bootstrap phase, through the kind of contested public debate that democratic governance requires. Rather, it touches on a variety of design dimensions to establish feasibility and plausibility, and that there is ample precedent for governing infrastructure of comparable complexity and importance through multistakeholder institutions.
             </p>
             <section>
-                <h2 id="h.144h6ggghs6x">High Level Requirements</h2>
+                <h3>High Level Requirements</h3>
                 <p>At its core, WISE must be an accountable power structure that represents the multiple constituencies whose interests the search/browser levy affects: browsers, search engines, publishers and the wider web development community, and the public. The current system's key failure is profoundly <strong>political</strong>: it effectively concentrates power in the hands of Google, with some say from Apple, and excludes everyone else. WISE must invert this arrangement, placing credible power in the hands of a much broader community rather than reserving it for the sole usage of a monopoly.
                 </p>
                 <p>Several design requirements follow from this:
@@ -566,7 +563,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.msyf90e1z3kj">Runtime Governance vs. Private Government</h2>
+                <h3>Runtime Governance vs. Private Government</h3>
                 <p>The governance model that WISE requires differs fundamentally from what the web standards community is accustomed to. Existing standards bodies practice what might be called <em>compile-time governance</em> (for the engineering-minded): they write specifications, ascertain that implementations exist, publish the specifications as standards, and then hope that nothing goes wrong in how the standard gets used. They have close to no ability to intervene if the ecosystem starts tanking, as all can notice from the historical absence of interventions on the part of the relevant bodies. This approach worked tolerably well in an era of competitive browser markets, where market discipline served as the enforcement mechanism (since the non-compliant will be outcompeted). It has failed catastrophically in an era of monopoly, where the dominant actor can simply pick and choose which “mandates” to implement according to their own interests.
                 </p>
                 <p>What WISE requires instead is <em>runtime governance</em>, a term coined by the creators of the Beckn Protocol to describe the active, ongoing management of shared concerns in a live system. Runtime governance means not only defining the rules according to which the ecosystem operates but also monitoring compliance, adjusting rules in response to changing conditions, imposing consequences for violations, and mediating disputes between participants. It is the difference between writing a wishlist and operating a government.
@@ -575,7 +572,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.azf908rldmv5">A SWIFT Precedent</h2>
+                <h3>A SWIFT Precedent</h3>
                 <p>The claim that a multistakeholder cooperative can govern critical global infrastructure at this scale often meets skepticism. People tend to think of cooperatives as quaint, small-scale, and fundamentally unserious. Something that runs an organic grocery stores, perhaps, but not for systems on which the global economy depends. This perception, of course, is the province of people who haven’t heard about the Visa Co-operative or, even more dramatically, about SWIFT.
                 </p>
                 <p>The Society for Worldwide Interbank Financial Telecommunication is a cooperative owned by over 10,000 member financial institutions, governed by a board elected by those members, and that operates the global messaging infrastructure through which the vast majority of international financial transactions are processed. SWIFT handles billions of messages per year, operates under high security and reliability requirements, and coordinates the interests of thousands of financial institutions across every jurisdiction on earth. It is, by any measure, one of the most consequential pieces of infrastructure in the global economy. And it has been a cooperative since its creation in the 1970s.
@@ -585,7 +582,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.cvyfajwl2yhm">Scope and Limits</h2>
+                <h3>Scope and Limits</h3>
                 <p>Defining what WISE governs is as important as defining how it governs.
                 </p>
                 <p>The institution's scope should encompass:
@@ -616,7 +613,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.qh5iiabz230f">Constituencies</h2>
+                <h3>Constituencies</h3>
                 <p>The work of establishing constituencies properly will need to be done during bootstrapping, but we can consider the following an adequate sketch for evaluative purposes:
                 </p>
                 <ul>
@@ -635,7 +632,7 @@
                 </ul>
             </section>
             <section>
-                <h2 id="h.1rdzi35zw2dx">Polycentric Approach</h2>
+                <h3>Polycentric Approach</h3>
                 <p>A polycentric system is one that has multiple decision centres, which is to say that decision-making and rule-setting take place at a variety of levels. Each decision centre has limited and autonomous prerogatives, and operates under and overarching set of rules. This offers a richer repertoire to work with than simply thinking in terms of “decentralisation,” which is a poorly defined notion and operates only on an axis of more or less centralised. Polycentric systems offer redundant levels of checks and balances, which makes them robust over time.
                 </p>
                 <p>Unbundling governance and making it work through multiple related institutions, each with its own arrangement, has benefits that include clearer shared local knowledge, rules that are better adapted to local needs, higher trust and lower enforcement costs, and reliance on disaggregated knowledge, which is more diverse and resilient. Additionally, the separate-but-interacting institutions form a parallel autonomous systems: the probability of failure over a large region is decreased because a set of local autonomous systems with a variety of rules is more robust. <span class="references">(<a href="#bib-c067a8e0e849e6b0e4f46edee64a82ee96e293dbacd2e2358507fc2c01a70f55" role="doc-biblioref">E. Ostrom 2005</a>)</span></p>
@@ -644,7 +641,7 @@
                 <p>Describing a full set of polycentric institutions <em>ex ante</em> is an exercise in futility, but we should be aware of the value involved in growing the system that way from the start so that we can avoid the pitfall of putting all of the responsibility in a single entity.</p>
             </section>
             <section>
-                <h2 id="h.gkdd7g7uwn2q">How to Not Break Browsers</h2>
+                <h3>How to Not Break Browsers</h3>
                 <p>There is a long history of failed standards, and we should often be grateful that they failed. XHTML 2.0, the Semantic Web's more grandiose ambitions, and numerous W3C specifications that never saw meaningful implementation all represent cases where the standards community's judgment about what the web needed or could successfully transition to was wrong, and developers’ refusal to implement provided valuable feedback. The risk with creating a governance body, like WISE, that has real enforcement power is that it could impose standards of no actual value, or worse, standards that actively harm the web's functioning. This would have happened if the W3C of the early 2000s had been given runtime governance authority.
                 </p>
                 <p>This risk requires strong internal rules constraining when WISE may impose <strong>mandatory </strong>standards. The guiding principle should be that mandates are reserved for cases where they are <em>necessary</em>: where interoperability cannot be achieved through voluntary adoption, where market discipline has demonstrably failed, or where the absence of a standard produces harms (to users, publishers, or the ecosystem) that competitive dynamics cannot correct.
@@ -655,7 +652,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.obustw5rn04e">How to Avoid Corruption and Oligarchy</h2>
+                <h3>How to Avoid Corruption and Oligarchy</h3>
                 <p>Every democratic institution faces the challenge that Robert Michels identified over a century ago as the Iron Law of Oligarchy: the tendency of organisations, no matter how democratic their founding principles, to develop entrenched leadership whose interests diverge from those of the broader membership <span class="references">(<a href="#bib-eb6c7ad8ee73e6cab39c2c11c1c0b12136fead35beb818393e0b058032367ddb" role="doc-biblioref">Michels et al. 1915</a>)</span>. WISE will not be exempt from this tendency, and pretending otherwise would be naïve. The question is not whether oligarchic pressures will emerge but whether the institution's design can slow their accumulation and create mechanisms for periodic renewal. Several design principles can help there.
                 </p>
                 <p>First, <strong><em>polycentric oversight</em></strong>. Rather than relying on a single jurisdiction to impose and verify conditionalities on WISE, multiple jurisdictions can eventually do so independently, each with its own regulatory authority, its own review processes, and its own capacity to intervene if the institution fails to meet its obligations. This produces the kind of robustness that Vincent Ostrom discussed in his work on polycentricity: a system in which no single centre of authority can be captured without the others <em>noticing </em>and <em>responding </em><span class="references">(<a href="#bib-5adc1230ac17eb2f2b78a53b12687b0de4ccb90cfb2d88add7023b7798862fbc" role="doc-biblioref">V. Ostrom et al. 1961</a>; <a href="#bib-4bd686da34d2ad7b3b879a78705db2b586e956d0971dd818f3e6208cf3d2fa6f" role="doc-biblioref">McGinnis and Indiana University Bloomington 2002</a>; <a href="#bib-f0cb26aae57cb12eada5dc0de20b6fb558d98732d3d72356567b2e7a9d80f6f0" role="doc-biblioref">V. Ostrom 2006</a>)</span>.
@@ -671,7 +668,7 @@
             </section>
         </section>
         <section>
-            <h1 id="h.aeugo74fdtd9">Enforcement</h1>
+            <h2>Enforcement</h2>
             <p>There is an important distinction in institutional theory between <em>rules-in-form</em> (what an institution's documents say) and <em>rules-in-use </em>(what actually happens when people interact with the institution's authority) <span class="references">(<a href="#bib-c067a8e0e849e6b0e4f46edee64a82ee96e293dbacd2e2358507fc2c01a70f55" role="doc-biblioref">E. Ostrom 2005</a>)</span>. People instinctively understand that: if the official driving speed limit in an area is 50 but the locals know that you never caught under 60, then the speed limit <em>in use</em> is really 60. It’s the one that matters. Institutions are real when people believe that they are, and a strong way of maintaining that belief is by enforcing the relevant rules consistently, visibly, and consequentially.
             </p>
             <p>This is one of the reasons why tech ethics initiatives have failed to deliver meaningful change: they produced rules-in-form (principles, frameworks, guidelines) without any mechanism to make those rules operative in the world. It also explains why standards organisations, absent effective runtime governance, fall so far short of the mark in digital governance: they can specify how systems <em>should</em> work but cannot intervene directly or effectively when systems <em>don't</em>. And it is why this report takes a more pragmatic approach, grounded in what we understand about how governance actually functions rather than in how we might wish it functioned.
@@ -679,16 +676,16 @@
             <p>This chapter addresses the practical dimensions of making WISE's authority real: how to bootstrap the system, how to grow it across jurisdictions, which regulatory instruments can underwrite it, and how to design the choice screens that serve as its primary enforcement mechanism.
             </p>
             <section>
-                <h2 id="h.rdaq51wuixfi">Implementation Stages</h2>
+                <h3>Implementation Stages</h3>
                 <section>
-                    <h3 id="h.wy9whhforh6o">Bootstrap</h3>
+                    <h4>Bootstrap</h4>
                     <p>Getting WISE off the ground will require a bootstrap phase during which many of the early operational details are worked out in practice. The first jurisdiction to support the system will need to adopt a relatively hands-on approach by defining acceptable initial ground rules, ensuring that the institution operates within its mandate, and providing the regulatory backstop that gives WISE's authority teeth.
                     </p>
                     <p>This bootstrap phase is less daunting than it might appear, for one critical reason: the levy already exists. WISE does not need to create a funding mechanism from nothing; it needs to bring an existing one under democratic governance. The groundwork exists. What is missing is the institutional structure to govern the levy in the web’s interest credibly.
                     </p>
                 </section>
                 <section>
-                    <h3 id="h.797xt0rmdc5a">Self-Enforcement and Growth</h3>
+                    <h4>Self-Enforcement and Growth</h4>
                     <p>Once operational, WISE has a clear toolbox for enforcement strengthened over time by a virtuous cycle. Participants who intend to appear on choice screens and to receive levy payments must remain within the system and comply with its rules. Departure or noncompliance means losing access to the distribution mechanism that delivers users and revenue. Revenue can be withheld, and exclusion from the system would be commercially devastating.
                     </p>
                     <p>A significant challenge lies in growing across jurisdictions that may have different expectations, legal frameworks, and political priorities. WISE's governance design must accommodate this variation through subsidiarity principles that enable regional flexibility. Again, SWIFT's experience in navigating the regulatory expectations of over 200 countries provides both precedent and practical lessons for managing this complexity.
@@ -696,7 +693,7 @@
                 </section>
             </section>
             <section>
-                <h2 id="h.4gmfdpeo1tkx">The Digital Markets Act (DMA)</h2>
+                <h3>The Digital Markets Act (DMA)</h3>
                 <p>Europe's Digital Markets Act is the logical regulatory instrument with which to bootstrap WISE. The DMA was designed precisely to structure digital markets so that they operate in alignment with societal needs, and it already contains provisions for browser and search choice screens that map directly onto WISE's proposed governance scope. The infrastructure of enforcement to back WISE with — gatekeeper designations, conduct requirements, the capacity to impose fines — is already in place.
                 </p>
                 <p>The DMA's application, unfortunately, has so far been underwhelming. Its choice screen mandates have been implemented through bilateral negotiations with the very monopolies they are supposed to constrain, proceeding at a pace that meets neither the needs of the market, the democratic urgency to reform the digital sphere, nor the promises made by the Commission during the DMA's development. The work is carried out largely behind closed doors, in ways that keep gatekeepers in the driving seat and that are devoid of meaningful public accountability <span class="references">(<a href="#bib-d7eb7fffd4cd18b6f45b675eec1e9a3081d99e2737bccdad39fc66086afebd64" role="doc-biblioref">OWA 2025</a>)</span>.
@@ -705,7 +702,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.mbkjw1t6hf11">Isn't a Covenant of This Kind Illegal?</h2>
+                <h3>Isn't a Covenant of This Kind Illegal?</h3>
                 <p>Some objections naturally arise: can competitors legally band together to govern shared infrastructure without running afoul of competition law? Can a public-interest body of this kind be granted authority to structure a market? Before answering these questions, it is worth noting that it would be difficult for WISE would be <em>more</em> problematic than the cartel-like arrangement that exists today, in which a single company pays billions to organise a market and foreclose competition (an arrangement that, notably, a US federal court has already found to be an illegal monopoly maintenance scheme).
                 </p>
                 <p>That said, the concern is not frivolous. Article 16 of the EU Charter of Fundamental Rights guarantees the freedom to conduct business, and any cooperative arrangement among competitors must be structured to avoid deleterious anticompetitive coordination. Several precedents, however, demonstrate that such structures can be both legal and societally beneficent, and justify the risks of collusion and ossification. Creating some constraints on the exercise of business can increase the freedom to conduct business by preventing more constrictive alternatives — of the kind that dominate today’s digital sphere — from emerging.
@@ -720,7 +717,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.yn547iubfrjw">Aren’t Choice Screens Bad?</h2>
+                <h3>Aren’t Choice Screens Bad?</h3>
                 <p>There is extensive precedent for bad choice screen programmes, but these have to be understood in context. In many cases, the details of the choice screen had been delegated to the monopoly that they were supposed to undermine. Enforcement was, at times, bad to the point of embarrassment such as when the Microsoft Windows browser choice screen, mandated by the European Commission, was infamously broken for fourteen months without anyone noticing. Google and Apple's compliance with DMA choice screen requirements has been grudging and minimalist. In a number of ways, the DMA's enforcement of its choice screen mandates is following in those unfortunate footsteps: proceeding bilaterally with monopolies, keeping them in the driving seat, and operating largely without meaningful public accountability.
                 </p>
                 <p>Despite these shortcomings, however, DMA choice screens are having a measurable impact even in their current imperfect form. As reported by Mozilla, "<em>Firefox saw an uptick of 111% daily active users in France and 99% in Germany in the first 12 months of the DMA - despite initially poor compliance</em>" <span class="references">(<a href="#bib-56f11d8e3dfc2f3a4d5328c3a9061263fb1748b7de6f288395193f55144c3b8c" role="doc-biblioref">OWA 2026</a>)</span>. Evidence shows demonstrated improvements in user satisfaction when people are given better search choices and when the chosen app gets into the “hotseat”. These results suggest that the problem is not with the concept of choice screens but with the quality of their design and the rigour of their enforcement.
@@ -749,7 +746,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.k45btti7us9x">Isn’t Co-Regulation Terrible?</h2>
+                <h3>Isn’t Co-Regulation Terrible?</h3>
                 <p>Co-regulation has, deservedly, a mixed reputation. It is frequently a vehicle for regulatory capture. The history of industry self-regulation in digital advertising, in privacy (as under the FTC’s mandated self-regulatory regime), and in content moderation provides ample grounds for skepticism. The concern that WISE could become captured by the actors it is meant to govern is legitimate.
                 </p>
                 <p>Several design features can mitigate this risk. First, small challengers who are currently crushed under the existing system must be given real power within WISE through weighted representation that reflects their importance to ecosystem diversity and not just their current market share. The quadratic-decay voting mechanism discussed in the governance chapter serves precisely this function: it limits the ability of large incumbents to simply outvote the rest of the membership.
@@ -762,7 +759,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.11sif52tiott">Reference Implementation</h2>
+                <h3>Reference Implementation</h3>
                 <p>Along with this report, example implementations of the browser and search choice screens have been provided on the <strong>https://ftw.fund/</strong> website. These reference implementations demonstrate that the design principles outlined above can be rendered usable (though I am not a designer and better designs are undoubtedly possible).
                 </p>
                 <p>A pragmatic approach to compliance would be for participating jurisdictions to simply adopt or adapt this reference implementation, providing a concrete, testable baseline from which iterative improvements can proceed. This is not the only possible implementation, and WISE's governance processes could and should develop alternatives and refinements over time. But having a working example from day one makes compliance much easier and provides a tangible artifact around which early consensus can form.
@@ -770,13 +767,13 @@
             </section>
         </section>
         <section>
-            <h1 id="h.kzzx3hp9bxoy">Fund Attribution</h1>
+            <h2>Fund Attribution</h2>
             <p>A reformed system must answer a set of practical questions that the current <em>ad hoc </em>arrangement has never been forced to confront, or at least not in public: How much money should be levied from search? How should it be divided between browsers and engines? And what other funding needs might the levy support?
             </p>
             <p>This chapter addresses those questions. The answers are necessarily provisional and to some degree <em>speculative </em>as the precise figures would be negotiated within the WISE governance framework rather than decreed in advance but the elements I have are sufficient to establish that the funding potential is more than adequate and that a well-governed levy could simultaneously reduce the burden on search while dramatically expanding investment in the web and the infrastructure of our digital sphere.
             </p>
             <section>
-                <h2 id="h.2ug7cdt2gckt">How Much to Levy from Search?</h2>
+                <h3>How Much to Levy from Search?</h3>
                 <p>The exact levy rate and collection mechanism would need to be negotiated within WISE's governance framework, balancing the interests of search engines, browsers, and the public. Search engines derive their near-entire value from the existence of a functional, content-rich web, and the web in turn depends on browsers and browser engines to render that content accessible. They therefore have an incentive to contribute to web infrastructure. Of course, the literature on infrastructure and public goods shows that funding for these is almost systematically underprovisioned, but we can expect a levy level decided by a group of stakeholders would be adequate in part because not only search engines have a voice, and because they benefit from the funding too.
                 </p>
                 <p>The current system provides a useful baseline from which to reason about feasible levy rates. Expert testimony in the <em>United States v. Google LLC</em> remedies proceedings revealed that Apple levied 36% of the revenue that Google Search generated from Safari traffic, a figure subsequently confirmed by Sundar Pichai himself <span class="references">(<a href="#bib-3bb5d6077ee048d90735411402bd5ba4f7dd6e2bfd7c278a6804564ce303c2f5" role="doc-biblioref">United States v Google 2024</a>)</span>. This is an extraordinary extraction rate (significantly higher than corporate tax rates in most jurisdictions).
@@ -784,7 +781,7 @@
                 <p>We can play with a simple model of what various levy rates could produce under a reformed system. Total annual global search revenue is approximately $240 billion. A 36% levy (likely a much higher level than other competitors get, but still informative) would yield over $86 billion. Halving that figure to account for the competitive pricing that would prevail in a non-monopolistic search market still yields $43 billion. Reducing the levy rate to a far more modest 5% and still halving for competitive ad pricing gives us about $6 billion, which is still comfortably more than even the highest estimates of the cost of maintaining all three browser engines and their associated browsers, with substantial margin for investment in standards (for reference, the W3C’s annual operating budget is about $10m), testing, research, and governance.
                 </p>
                 <table>
-                    <tr>
+                    <tbody><tr>
                         <td><strong>Levy Rate</strong></td>
                         <td><strong>Gross Yield (on $240bn)</strong></td>
                         <td><strong>50% Adjustment for Competitive Pricing</strong></td>
@@ -813,21 +810,21 @@
                         <td>~$6 billion
                         </td>
                     </tr>
-                </table>
+                </tbody></table>
                 <p>There is clearly room to finance solid, thriving web infrastructure in the public interest while extracting far less money from search than the current system takes. And this calculation does not account for the positive second-order effects of reform: money that is no longer captured by monopoly ad pricing does not disappear from the economy. It most likely recirculates through other marketing channels which massively benefits the rest of the digital ecosystem and the publishers who depend on advertising revenue to produce the content that gives search its value in the first place.
                 </p>
                 <p>One important note: under a protocol search system of the kind described in the solutions chapter, the browser itself collects the funds—whether from user subscriptions, contextual advertising, or per-query payments. But this only shifts where the money is collected, not the overall logic of fund distribution. Whether revenue flows from search engine to WISE to browsers, or from users to browsers to search engines with a levy extracted at the browser level, the fundamental decisions remain the same.
                 </p>
             </section>
             <section>
-                <h2 id="h.l0sju8oka5aq">The Browser/Engine Split</h2>
+                <h3>The Browser/Engine Split</h3>
                 <p>As the chapter on browser costs showed, the variation in estimates reflects a genuine ambiguity about what responsibilities exactly fall within the browser’s remit. A reformed levy system must confront this ambiguity directly, because getting the split wrong has serious consequences. If funding flows primarily to browsers and browsers are free to adopt open-source engines without contributing to their maintenance, the free-riding problem documented earlier will persist under new management. If we under-value important but low visibility services provided by browsers (like parts of the security stack, the Safe Browsing blocklist, moderation, etc) then we may end up indirectly underfunding essential services by undercutting browser revenue more than it needs to be.
                 </p>
                 <p>Determining the ideal allocation is challenging, but the WISE framework provides the institutional mechanism to resolve it: browser and browser engine projects that participate in the system would benefit from surfacing costs that may not otherwise be well known.
                 </p>
             </section>
             <section>
-                <h2 id="h.6dv643fwjhl2">Other Funding Opportunities</h2>
+                <h3>Other Funding Opportunities</h3>
                 <p>A reformed levy need not limit itself to financing browsers and engines. The current system's failures have produced cascading underinvestment across the entire web infrastructure stack, and a well-governed levy could address several of these gaps simultaneously.
                 </p>
                 <p><strong>Open source security &amp; maintenance programmes.</strong> Germany's Sovereign Tech Agency has demonstrated that effective investment in open digital infrastructure is possible at relatively modest scale. Operating with a budget of approximately €20 million, the agency funds maintenance and improvement of critical open-source projects. The model is compelling precisely because of its efficiency: targeted funding of specific infrastructure needs, governed by people who understand the technology, with scouting and minimal administrative overhead for grantees. A WISE-governed levy could generalise this model to all jurisdictions covered by the system, establishing sovereign technology programs that address locally relevant infrastructure needs. Scaling the STA’s model even modestly could transform the digital infrastructure landscape.
@@ -840,7 +837,7 @@
                 </p>
             </section>
             <section>
-                <h2 id="h.flrkr3aho3g2">Conditionalities</h2>
+                <h3>Conditionalities</h3>
                 <p>No system of this kind can operate on goodwill alone. For a state to delegate governance authority over a public interest levy to a multistakeholder institution like WISE, it must impose minimum standards of performance, transparency, and accountability short of which the state retains the right to intervene directly, which is to say <em>conditionalities</em>. These conditionalities serve as the backstop that prevents institutional capture, the insurance policy against the scenario in which WISE's governance is progressively captured by the same commercial interests that corrupted the current system.
                 </p>
                 <p>The precise conditionalities would need to be specified by the authorising jurisdictions, but they should include at minimum:
@@ -864,7 +861,7 @@
             </section>
         </section>
         <section>
-            <h1 id="h.c0ixfxaqz2ox">Conclusion</h1>
+            <h2>Conclusion</h2>
             <p>The model explored in this report implements a shift from the private government of the web towards one that focuses on infrastructure governed by or at least in the interest of its users. This is hardly a novel approach outside of the digital world: treating infrastructure as a public good creates downstream benefits to both businesses and citizens <span class="references">(<a href="#bib-060de7dc074e90d2723b52f6af5979eaec5e8547eeece1cf5998b733e4bfc841" role="doc-biblioref">Ricks et al. 2022</a>)</span>. It promotes a competitive environment in which firms can thrive without the winner-take-all dynamics that create inferior outcomes and authoritarian governance. Put differently, the proposal simply considers digital infrastructure outside of tech exceptionalism, and offers instead a tried-and-true approach that serves us well in the analog world.
             </p>
             <p>While there is no room to go beyond search and browsers in any detail here, we can readily see how this approach could benefit other digital markets. Even without a League of Digital Infrastructure, runtime collective governance over shared infrastructure is an idea that is being explored in other spaces. An older proposal (still being explored) suggested a comparable approach as a solution to the many ills of the advertising ecosystem <span class="references">(<a href="#bib-479b26386b3e78eadeb0611005766adc8054df143d6e9b978e8bb00f63baf60c" role="doc-biblioref">Berjon 2021a</a>)</span>. The network built atop the AT Protocol, which brings together many different actors, is evolving towards something like a “covenant” that would allow for joint governance of the overall ecosystem <span class="references">(<a href="#bib-bef8f1dd49c0e36756b26dbf08c853bcc603c50fa360ce98549078fc3bcfdf17" role="doc-biblioref">AT Proto 2026</a>)</span>. And the Beckn Protocol has already deployed network-specific governance bodies (for instance for retail in India) and is investigating extending the model more broadly <span class="references">(<a href="#bib-a159ce6a597971ee1d743ea0a12569623aa87f94122bd0176a02b15c634a6efa" role="doc-biblioref">Beckn 2026</a>)</span>.
@@ -878,7 +875,7 @@
             <p>There is little that could be more impactful in building a better internet, today.</p>
         </section>
         <section class="special-section appendix">
-            <h1 id="h.5uu7ioz7i2lq">Acknowledgements</h1>
+            <h2>Acknowledgements</h2>
             <p>Many former or current employees from browser vendors and search engines large and small provided crucial information on condition of anonymity. I am deeply thankful for the time you gave me and you dedication to fixing this arrangement, even though your employers benefit from it.
             </p>
             <p>Many thanks to all the participants in the lively and highly-attended browser funding workshop at Web Engines Hackfest 2025 — this document surfaces many of your views — and to Igalia for their warm welcome and outstanding organisation. Special mentions to Brian Kardell, Eric Meyer, Stephanie Stimac, Alex Moore, and Xan López for your contributions to browser funding issues and precious conversations. A shout-out as well to the indefatigable people at OWA. My heartfelt thanks as well to the participants of the KGI workshop on search remedies, and in particular to Alissa Cooper.
@@ -891,7 +888,7 @@
             </p>
         </section>
         <section id="references" class="special-section" role="doc-bibliography">
-            <h1>References</h1>
+            <h2>References</h2>
             <dl class="bibliography">
                 <dt id="bib-bef8f1dd49c0e36756b26dbf08c853bcc603c50fa360ce98549078fc3bcfdf17">AT Proto 2026</dt>
                 <dd>
@@ -1200,6 +1197,6 @@
             </dl>
         </section>
     </main>
-</body>
 
-</html>
+
+</main></body></html>
