@@ -55,6 +55,18 @@ header p {
   font-size: 1.2rem;
   letter-spacing: 3.5px;
 }
+#hero .logos {
+  text-align: center;
+  margin-top: 4rem;
+}
+#hero .logos p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+#hero .logos img {
+  max-width: 4rem;
+  margin: 0 1rem;
+}
 
 p, li, dt, dd {
   font-weight: 300;
@@ -104,16 +116,16 @@ footer > div {
   max-width: var(--max-width);
   margin: 0 auto;
 }
-.logos {
-  margin: 4rem auto;
-  display: flex;
+footer .logos {
+  margin: 1rem auto 4rem auto;
 }
-.logos a {
+footer .logos a {
   flex-grow: 1;
   text-align: center;
 }
-.logos img {
-  max-width: 6rem;
+footer .logos img {
+  max-width: 3rem;
+  margin-left: 1rem;
 }
 
 a {
