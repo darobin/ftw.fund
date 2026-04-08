@@ -230,7 +230,7 @@ const browsers = [
   },
 ];
 
-const state = {};
+const state = { sort: 'alpha' };
 const isBrowser = document.body.getAttribute('data-topic') === 'browser';
 
 if (isBrowser) {
@@ -291,13 +291,36 @@ function render (products) {
     div.append(datalist);
     nav.append(div);
   });
+  // const sortDiv = document.createElement('div');
+  const label = document.createElement('label');
+  // label.setAttribute('for', 'sorting');
+  const chk = document.createElement('input');
+  chk.setAttribute('type', 'checkbox');
+  label.append(
+    document.createTextNode('Sort by popularity '),
+    chk,
+  );
+  chk.onchange = () => {
+    state.sort = chk.checked ? 'stars' : 'alpha';
+    renderFilteredProducts(products);
+  };
+  // sortDiv.append(label);
+  // nav.append(sortDiv);
+  nav.append(label);
   renderFilteredProducts(products);
 }
 
 function renderFilteredProducts (products) {
   const choice = document.querySelector('#choice');
   choice.textContent = null;
-  const sorter = () => 0;
+  const sorter = (state.sort === 'stars')
+    ? (a, b) => {
+        if (a.stars > b.stars) return -1;
+        if (a.stars < b.stars) return 1;
+        return 0;
+      }
+    : (a, b) => a.name.localeCompare(b.name)
+  ;
   choice.append(
     ...
     products

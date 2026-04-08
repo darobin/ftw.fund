@@ -33,18 +33,30 @@ h1 {
   text-align: center;
   font-weight: 500;
 }
-nav {
-  display: flex;
+p {
+  margin: 0 2rem;
 }
 nav > div {
-  flex-grow: 1;
   margin: 2rem;
+}
+nav {
+  display: grid;
+  grid-template-areas:
+    "filter-1 filter-2"
+    "sort sort"
+  ;
+}
+nav > div:nth-child(1) { grid-area: filter-1; }
+nav > div:nth-child(2) { grid-area: filter-2; }
+nav > label {
+  grid-area: sort;
+  margin: 0 2rem 2rem 2rem;
 }
 nav label {
   font-weight: 600;
   display: block;
 }
-nav input {
+nav div input {
   width: 100%;
 }
 nav datalist {
