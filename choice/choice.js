@@ -291,9 +291,7 @@ function render (products) {
     div.append(datalist);
     nav.append(div);
   });
-  // const sortDiv = document.createElement('div');
   const label = document.createElement('label');
-  // label.setAttribute('for', 'sorting');
   const chk = document.createElement('input');
   chk.setAttribute('type', 'checkbox');
   label.append(
@@ -304,14 +302,38 @@ function render (products) {
     state.sort = chk.checked ? 'stars' : 'alpha';
     renderFilteredProducts(products);
   };
-  // sortDiv.append(label);
-  // nav.append(sortDiv);
   nav.append(label);
   renderFilteredProducts(products);
 }
 
 function renderFilteredProducts (products) {
   const choice = document.querySelector('#choice');
+  choice.onclick = (ev) => {
+    const { target } = ev;
+    const pick = target.getAttribute('data-choice');
+    if (target.localName !== 'button' || !pick) return;
+    const row = target.parentNode.parentNode;
+    const diag = document.querySelector('dialog');
+    diag.textContent = null;
+    const p = document.createElement('p');
+    p.textContent = 'Congratulations, you chose:';
+    const optOut = row.querySelector('input[name="opt-out"]').checked;
+    const div = document.createElement('div');
+    if (optOut) {
+      div.textContent = isBrowser ? 'Opted out of selling data.' : 'Opted out of AI summaries.';
+    }
+    const ok = document.createElement('button');
+    ok.textContent = 'Ok';
+    ok.onclick = () => diag.close();
+    diag.append(
+      p,
+      row.querySelector('img').cloneNode(true),
+      row.querySelector('h2').cloneNode(true),
+      div,
+      ok,
+    );
+    diag.showModal();
+  };
   choice.textContent = null;
   const sorter = (state.sort === 'stars')
     ? (a, b) => {
@@ -347,7 +369,7 @@ function renderFilteredProducts (products) {
               <input type="checkbox" name="opt-out">
               ${ isBrowser ? `Ask sites not to sell my data` : `No AI summaries` }
             </label>
-            <button>Choose</button>
+            <button data-choice='${id}'>Choose</button>
           </div>
         `;
         return div;

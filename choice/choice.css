@@ -156,3 +156,26 @@ stars {
   font-size: 0.85rem;
   cursor: pointer;
 }
+
+dialog {
+  display: grid;
+  grid-template-areas:
+    "chose chose"
+    "logo name"
+    "opt-out opt-out"
+    "close close"
+  ;
+  grid-template-columns: 3rem 1fr;
+  align-items: center;
+}
+dialog > p { grid-area: chose; margin: 1rem 0 2rem 0; }
+dialog > img { grid-area: logo; width: 3rem; }
+dialog > h2 { grid-area: name; margin-left: 0.4rem; }
+dialog > div { grid-area: opt-out; margin: 1rem 0; }
+dialog > button {
+  grid-area: close;
+  text-align: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
