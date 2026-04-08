@@ -280,15 +280,26 @@ function render (products) {
       renderFilteredProducts(products);
     };
     div.append(input);
+    // WebKit fails to render datalist correctly, so we fake it
     const datalist = document.createElement('datalist');
+    const dataDiv = document.createElement('div');
+    dataDiv.className = 'datalist';
     datalist.id = dataId;
     options.levels.forEach(({ name }, idx) => {
       const opt = document.createElement('option');
+      const sp = document.createElement('span');
+      sp.onclick = () => {
+        input.value = idx;
+        input.onchange();
+      };
       opt.value = idx;
       opt.label = name;
+      sp.textContent = name;
       datalist.append(opt);
+      dataDiv.append(sp);
     });
     div.append(datalist);
+    div.append(dataDiv);
     nav.append(div);
   });
   const label = document.createElement('label');

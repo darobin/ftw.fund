@@ -59,12 +59,15 @@ nav label {
 nav div input {
   width: 100%;
 }
-nav datalist {
+nav .datalist {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   writing-mode: vertical-lr;
   width: 100%;
+}
+nav .datalist span {
+  cursor: pointer;
 }
 
 #choice {
