@@ -42,6 +42,21 @@ icon.setAttribute('rel', 'icon');
 icon.setAttribute('href', 'icon.svg');
 doc.head.append(icon);
 
+[
+  { name: "twitter:card", content: "summary_large_image", },
+  { name: "twitter:title", property: "og:title", content: "Funding The Web: From Cartel to Covenant", },
+  { name: "twitter:description", property: "og:description", content: "The Web is slow-motion collapsing for multiple reasons, but at the heart of it all is a little known system: the Search/Browser Levy. Let's fix it!", },
+  { name: "twitter:image", property: "og:image", content: "https://ftw.fund/banner.png", },
+  { name: "twitter:image:alt", content: "Funding The Web with a yellow bar", },
+  { name: "twitter:url", property: "og:url", content: "https://ftw.fund/report.html", },
+  { name: "theme-color", content: "#fc0", },
+  { property: "og:locale", content: "en_UK", },
+].forEach(attr => {
+  const meta = doc.createElement('meta');
+  Object.entries(attr).forEach(([k, v]) => meta.setAttribute(k, v));
+  doc.head.append(meta);
+});
+
 const df = doc.createDocumentFragment();
 const oldMain = doc.querySelector('main');
 df.append(...oldMain.childNodes);
