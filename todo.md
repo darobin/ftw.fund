@@ -1,8 +1,11 @@
 
 - [x] hero with blurb
 - [ ] choice screens
-  - [ ] mobile layout
+  - [x] mobile layout
   - [x] what happens when choose
-  - [ ] browser version
+  - [x] browser version
+  - [ ] check
+    - [ ] Chrome
+    - [ ] Safari
 - [x] contact blurb
 - [x] mobile
