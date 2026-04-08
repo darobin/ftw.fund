@@ -73,8 +73,8 @@ const searches = [
     id: 'beacon',
     name: 'Beacon',
     slogan: 'Guiding you to answers',
-    privacy: 'tracking',
-    sustainability: 'fair',
+    privacy: 'none',
+    sustainability: 'neutral',
     stars: 1,
   },
   {
@@ -82,15 +82,15 @@ const searches = [
     name: 'Compass',
     slogan: 'Find your direction online',
     privacy: 'fair',
-    sustainability: 'negative',
+    sustainability: 'none',
     stars: 3,
   },
   {
     id: 'findly',
     name: 'Findly',
     slogan: 'Search everything, instantly',
-    privacy: 'tracking',
-    sustainability: 'negative',
+    privacy: 'none',
+    sustainability: 'none',
     stars: 2,
   },
   {
@@ -114,7 +114,7 @@ const searches = [
     name: 'Nebula',
     slogan: 'Explore the universe of knowledge',
     privacy: 'strict',
-    sustainability: 'negative',
+    sustainability: 'none',
     stars: 3,
   },
   {
@@ -122,7 +122,7 @@ const searches = [
     name: 'Pulse',
     slogan: 'Real-time trending search',
     privacy: 'fair',
-    sustainability: 'negative',
+    sustainability: 'none',
     stars: 4,
   },
   {
@@ -130,7 +130,7 @@ const searches = [
     name: 'Quacker',
     slogan: 'Your searches stay your business',
     privacy: 'strict',
-    sustainability: 'fair',
+    sustainability: 'neutral',
     stars: 5,
   },
   {
@@ -155,7 +155,7 @@ const browsers = [
     id: 'crucible',
     name: 'Crucible',
     slogan: 'Where ideas merge and fuse',
-    privacy: 'tracking',
+    privacy: 'none',
     stars: 3,
   },
   {
@@ -176,7 +176,7 @@ const browsers = [
     id: 'gleam',
     name: 'Gleam',
     slogan: 'Polished, fast, everywhere you go',
-    privacy: 'tracking',
+    privacy: 'none',
     stars: 2,
   },
   {
@@ -225,7 +225,7 @@ const browsers = [
     id: 'zephyr',
     name: 'Zephyr',
     slogan: 'Lightweight and breezy',
-    privacy: 'tracking',
+    privacy: 'none',
     stars: 3,
   },
 ];
@@ -298,17 +298,6 @@ function renderFilteredProducts (products) {
   const choice = document.querySelector('#choice');
   choice.textContent = null;
   const sorter = () => 0;
-  console.warn(`rendering`, products, state,
-    products
-      .filter(p => {
-        console.warn(`${p.name}:`);
-        Object.keys(state.criteria).forEach(k => {
-          console.warn(`  - ${k}:`, state[k], p[k]);
-        })
-      if (Object.keys(state.criteria).every(k => state[k].has(p[k]))) return true;
-      return false;
-    })
-);
   choice.append(
     ...
     products
@@ -327,7 +316,7 @@ function renderFilteredProducts (products) {
           ${
             Object.entries(state.criteria).map(([k, v]) => {
               return `<div class="${k}"><strong>${v.label}</strong><span>${v.levels.find(lvl => lvl.id === p[k]).name}</span></div>`;
-            })
+            }).join('\n')
           }
           <div class="stars"><span class="have">${'★'.repeat(stars)}</span><span class="missing">${'☆'.repeat(5 - stars)}</span></div>
           <div class="action">

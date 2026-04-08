@@ -54,3 +54,93 @@ nav datalist {
   writing-mode: vertical-lr;
   width: 100%;
 }
+
+#choice {
+  display: grid;
+  grid-template-columns: 56px 1fr auto auto auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0;
+}
+.row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+.row:first-child {
+  border-top: 1px solid #ddd;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+.name h2 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.name p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+.privacy,
+.sustainability {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  white-space: nowrap;
+}
+.privacy strong,
+.sustainability strong {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+.privacy span,
+.sustainability span {
+  font-size: 0.9rem;
+}
+stars {
+  white-space: nowrap;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+.stars .have {
+  color: #f5a623;
+}
+.stars .missing {
+  color: #ccc;
+}
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+.action label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.action button {
+  padding: 5px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
