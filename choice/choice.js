@@ -314,7 +314,8 @@ function renderFilteredProducts (products) {
     if (target.localName !== 'button' || !pick) return;
     const row = target.parentNode.parentNode;
     const diag = document.querySelector('dialog');
-    diag.textContent = null;
+    const parent = diag.firstElementChild;
+    parent.textContent = null;
     const p = document.createElement('p');
     p.textContent = 'Congratulations, you chose:';
     const optOut = row.querySelector('input[name="opt-out"]').checked;
@@ -325,7 +326,7 @@ function renderFilteredProducts (products) {
     const ok = document.createElement('button');
     ok.textContent = 'Ok';
     ok.onclick = () => diag.close();
-    diag.append(
+    parent.append(
       p,
       row.querySelector('img').cloneNode(true),
       row.querySelector('h2').cloneNode(true),

@@ -157,7 +157,7 @@ stars {
   cursor: pointer;
 }
 
-dialog {
+dialog > div {
   display: grid;
   grid-template-areas:
     "chose chose"
@@ -168,11 +168,11 @@ dialog {
   grid-template-columns: 3rem 1fr;
   align-items: center;
 }
-dialog > p { grid-area: chose; margin: 1rem 0 2rem 0; }
-dialog > img { grid-area: logo; width: 3rem; }
-dialog > h2 { grid-area: name; margin-left: 0.4rem; }
-dialog > div { grid-area: opt-out; margin: 1rem 0; }
-dialog > button {
+dialog > div > p { grid-area: chose; margin: 1rem 0 2rem 0; }
+dialog > div > img { grid-area: logo; width: 3rem; }
+dialog > div > h2 { grid-area: name; margin-left: 0.4rem; }
+dialog > div > div { grid-area: opt-out; margin: 1rem 0; }
+dialog > div > button {
   grid-area: close;
   text-align: right;
   background: transparent;
