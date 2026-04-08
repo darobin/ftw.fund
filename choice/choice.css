@@ -179,3 +179,42 @@ dialog > div > button {
   border: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width:500px) {
+  nav {
+    grid-template-areas:
+      "filter-1"
+      "filter-2"
+      "sort"
+    ;
+  }
+  nav > div {
+    margin: 1rem;
+  }
+  nav > label {
+    margin: 0 1rem 1rem 1rem;
+  }
+  #choice {
+    grid-template-columns: 56px 1fr 1fr 1fr;
+  }
+  .name {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  .privacy {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .sustainability {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .stars {
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+  .action {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+}
